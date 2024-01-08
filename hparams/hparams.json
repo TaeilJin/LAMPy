@@ -1,0 +1,123 @@
+{
+    "Dir": {
+        "data_root": "../../data/locomotion",
+        "data_dir": "../../data/locomotion/2022/",
+        "log_root": "data/results/Test",
+        "scaler_dir" : "D:/TJ_develop/NeuralAPE_Results/root_position_all"
+    },
+    "Glow" : {
+        "hidden_channels": 512,
+        "K": 3,
+        "actnorm_scale": 1.0,
+        "flow_permutation": "invconv",
+        "flow_coupling": "affine",
+        "network_model": "LSTM_ENV",
+        "num_layers": 2,
+        "LU_decomposed": true,
+		"distribution": "normal"
+    },
+    "Data" : {
+        "pose_features": 66,
+        "target_root_isMat": false,
+        "target_root_features": 3,
+        "target_skeleton": "smpl",
+        "ee_dim": 3,
+        "framerate": 30,
+        "seqlen": 10,
+        "n_lookahead": 0,
+        "dropout": 0.95,
+        "dropout_env": 0.5,
+        "mirror": true,
+        "reverse_time": true
+    },
+    "Optim": {
+        "name": "adam",
+        "args": {
+            "lr": 1e-3,
+            "betas": [0.9, 0.999],
+            "eps": 1e-8
+        },
+        "Schedule": {
+            "name": "noam_learning_rate_decay",
+            "args": {
+                "warmup_steps": 1000,
+                "minimum": 1e-4
+            }
+        }
+    },
+    "Device": {
+        "glow": ["cuda:10"],
+        "data": "cuda:10"
+    },
+    "Train": {
+        "model": "DAFNet_Gen",
+        "calc": "mu_var",
+        "condmodel" :"enc",
+        "footmodel" : "concat",
+        "train_cond_enc":false,
+        "batch_size": 50,
+        "num_batches": 120000,
+        "max_grad_clip": 5,
+        "max_grad_norm": 100,
+        "max_checkpoints": 20,
+        "checkpoints_gap": 10000,
+        "num_plot_samples": 1,
+        "scalar_log_gap": 50,
+        "validation_log_gap": 372,
+        "plot_gap": 10000,
+        "warm_start": ""
+    },
+    "Spline":{
+        "coupling_layer_type":"rational_quadratic_spline",
+        "num_bins": 66,
+        "tail_bound": 7,
+        "min_bin_width": 1e-3,
+        "min_bin_height": 1e-3,
+        "min_derivative": 1e-3,
+        "apply_unconditional_transform": false
+    },
+    "Gumbel":{
+        "num_classes" : 10,
+        "w_gauss": 1.0,
+        "w_categ":1.0,
+        "w_rec":1.0,
+        "w_foot":1.0,
+        "rec_type":"mse",
+        "verbose" : 0,
+        "init_temp" :1.0,
+        "decay_temp" :1.0,
+        "hard_gumbel" :0.0,
+        "min_temp":0.5,
+        "decay_temp_rate":0.0023862944,
+        "fixed_temp" : false,
+        "fixed_temp_value": 1.0
+    },
+    "Dlow":{
+        "train" : true,
+        "nh_mlp": [1024, 512],
+        "nh_rnn": 128,
+        "rnn_type": "gru", 
+        "x_birnn" : false,
+        "fix_first": false,
+        "lambda_j": 25,
+        "lambda_recon": 0.0,
+        "lambda_kl" : 1.0,
+        "nSample" : 10,
+        "d_scale": 170,
+        "plot_gap": 50,
+        "checkpoints_gap": 100,
+        "validation_log_gap": 30,
+        "num_batches": 373
+    },
+    "Test": {
+        "batch_size": 30
+    },
+    "Infer": { 
+        "pre_trained": "D:/TJ_develop/NeuralAPE_Results/root_position_all/Ours_log_20230303_2127/checkpoints/save_600k0.pkg",
+        "pre_trained_cond": "D:/TJ_develop/NeuralAPE_Results/root_position_all/cGMVAE_cluster10_log_20220728_2248/checkpoints/trained.pkg",
+        "pre_trained_foot":"D:/TJ_develop/NeuralAPE_Results/root_position_all/footestimator_BCE_concat_log_20230306_1629/checkpoints/trained.pkg",
+        "save_train" : "D:/TJ_develop/NeuralAPE_Results/root_position_all/cGMVAE_cluster10_log_20220728_2248/checkpoints/trained.pkg SAMP: epoch_0100.pt moGlow:  woPrb: gmm_env, gen_env_affine_3,   Ours: gmm_env_gmm_label,gen_env_gmm_label_log_20221108_0014   ,gen_woGMM_encoder woAP: gen_moglow_log_20220811_2221 D:/TJ_develop/moGlow_dataEx/root_position_all/gen_env_affine_3_label_foot_dp_log_log_20221205_0012/checkpoints/trained.pkg D:/TJ_develop/moGlow_dataEx/root_position_all/gen_env_gmm_label_log_20221108_0014/checkpoints/trained.pkg D:/TJ_develop/moGlow_dataEx/root_position_all/cGMVAE_log_20220728_2248/checkpoints/trained.pkg"
+    }
+    
+}
+

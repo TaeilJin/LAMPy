@@ -1,0 +1,112 @@
+{
+  "Dir": {
+    "data_root": "../../data/locomotion",
+    "data_dir": "D:/TJ_develop/2023/fall/Python/LAMPy/data/model/Space/Test",
+    "log_root": "D:/TJ_develop/2023/fall/Python/LAMPy/data/model/Space",
+    "scaler_dir" : "D:/TJ_develop/2023/fall/Python/LAMPy/data/model/Space"
+  },
+  "Data": {
+    "pose_features": 75,
+    "target_root_isMat": false,
+    "target_root_features": 3,
+    "target_skeleton": "mixamo",
+    "ee_dim": 3,
+    "framerate": 30,
+    "seqlen": 10,
+    "n_lookahead": 0,
+    "dropout": 0.95,
+    "dropout_env": 0.5,
+    "mirror": true,
+    "reverse_time": true
+  },
+  "Glow": {
+    "hidden_channels": 512,
+    "K": 6,
+    "actnorm_scale": 1.0,
+    "flow_permutation": "invconv",
+    "flow_coupling": "affine",
+    "network_model": "LSTM",
+    "num_layers": 2,
+    "num_foots": 4,
+    "LU_decomposed": true,
+    "distribution": "normal"
+  },
+  "Optim": {
+    "name": "adam",
+    "args": {
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08
+    },
+    "Schedule": {
+      "name": "noam_learning_rate_decay",
+      "args": {
+        "warmup_steps": 1000,
+        "minimum": 0.0001
+      }
+    }
+  },
+  "Device": {
+    "glow": [
+      "cuda:0"
+    ],
+    "data": "cuda:0"
+  },
+  "Train": {
+    "model": "moglow",
+    "calc": "mu_var",
+    "condmodel": "enc",
+    "footmodel": "gating_cVAE",
+    "train_cond_enc": false,
+    "batch_size": 50,
+    "validation_size": 90,
+    "num_batches": 200000,
+    "max_grad_clip": 5,
+    "max_grad_norm": 100,
+    "max_checkpoints": 20,
+    "checkpoints_gap": 10000,
+    "num_plot_samples": 1,
+    "scalar_log_gap": 50,
+    "validation_log_gap": 82,
+    "plot_gap": 5900,
+    "warm_start": "",
+    "datasets": "locomotion"
+  },
+  "Spline": {
+    "coupling_layer_type": "rational_quadratic_spline",
+    "num_bins": 66,
+    "tail_bound": 7,
+    "min_bin_width": 0.001,
+    "min_bin_height": 0.001,
+    "min_derivative": 0.001,
+    "apply_unconditional_transform": false
+  },
+  "Gumbel": {
+    "num_classes": 10,
+    "w_gauss": 1.0,
+    "w_categ": 1.0,
+    "w_rec": 1.0,
+    "w_foot": 4.0,
+    "rec_type": "mse",
+    "verbose": 0,
+    "init_temp": 1.0,
+    "decay_temp": 1.0,
+    "hard_gumbel": 0.0,
+    "min_temp": 0.5,
+    "decay_temp_rate": 0.00039771,
+    "fixed_temp": false,
+    "fixed_temp_value": 0.7
+  },
+  "Test": {
+    "batch_size": 4
+  },
+  "Infer": {
+    "pre_trained": "D:/TJ_develop/2023/fall/Python/LAMPy/data/model/Space/trained.pkg",
+    "pre_trained_cond": "/root/home/project/mnt/ssd23/TAEIL/SAMP/tar_vel/Results/log_20230527_2301/checkpoints/trained.pkg",
+    "pre_trained_foot": "",
+    "save_train": "pre-trained foot contact (2part): /root/home/project/Data/results/log_20221205_0012/checkpoints/trained.pkg, pre-trained GMVAE : /root/home/project/ps6/Taeil/data/results/locomotion/log_20220728_2248/checkpoints/trained.pkg"
+  }
+}

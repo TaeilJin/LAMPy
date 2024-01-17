@@ -3,8 +3,9 @@ from MBS.retarget import MBS_Retarget
 import json
 import ctypes
 
-tcp = Core_tcp.TCP_Connection('143.248.6.198',80)
 mbs = MBS_Retarget()
+tcp = Core_tcp.TCP_Connection('143.248.6.198',80)
+
 
 while True:
     tcp.recieve()
@@ -35,7 +36,7 @@ while True:
 
         # output mbs tar
         float_output_array = (ctypes.c_float * (mbs.numlinks*4+3))()
-        mbs.exportMBSPoseFromUnity(1,float_output_array)
+        mbs.exportUnityPoseFromMBS(1,float_output_array)
 
         # float 배열을 바이트로 변환
         tcp.send(float_output_array)

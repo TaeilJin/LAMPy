@@ -1,0 +1,15 @@
+site_name: LAMPy
+
+nav: 
+  - Home: index.md
+  - MBS Python Manager:
+    - MBS: MBS.md
+    - MBS_IK: MBS_IK.md
+    - MBS_Retargeting: MBS_retargeting.md
+theme:
+  name: material
+
+plugins:
+  - mkdocstrings
+  
+  

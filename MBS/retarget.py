@@ -14,13 +14,12 @@ class MBS_Retarget(MBS):
         self.numlinks = 0
         
     def initRetarget(self, srcMBS, tarMBS, MappingTxt):
-        """
-        Args:
-        none
+        """intialize retargeting solver
 
-        Returns:
-        Construct Source and Target MBS
-        & Initialize Retargeting Solver
+        Args:
+            srcMBS (string): File path of source MBStxt
+            tarMBS (string): File path of target MBStxt
+            MappingTxt (_type_): File path of joint mapping txt
         """
         self.numlinks = self.lib.LOAD_SRC_TAR_MBS(srcMBS,tarMBS)
 
@@ -30,9 +29,10 @@ class MBS_Retarget(MBS):
         self.lib.INIT_MAPPING_fromTXT(MappingTxt)
     
     def doRetarget(self,base_offset):
-        """
+        """do pose-to-pose Retargeting
+
         Args:
-        do retargeting solver
+            base_offset (pointer[float]): offset position
         """
         self.lib.DO_RETARGET_OUTPUT(base_offset[0],base_offset[1],base_offset[2])
 

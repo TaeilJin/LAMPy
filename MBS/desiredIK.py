@@ -28,14 +28,12 @@ class MBS_DesIK(MBS):
         return index
 
     def initIK(self, MBS):
-        """
-        Args:
-        Src Text of MBS File
+        """Initialize Retargeting Solver (processing mbs is constructed)
 
-        Returns:
-        Construct Target MBS
-        & Initialize Retargeting Solver (tarPoints,tarEndPoints : desiredPoints,desiredDirs)
+        Args:
+            MBS (string): File path of MBS file
         """
+        
         # load MBS
         self.numlinks = self.loadMBS(MBS)
         self.numlinks = self.lib.INIT_IK()
@@ -63,7 +61,14 @@ class MBS_DesIK(MBS):
 
         print( f"Desired Points: {desPoints} Desired Dirs: {desDirs}" )
 
-    def SetDesPositionArray(self, des_index, des_pos_arr, des_weight_arr):
+    def setDesPositionArray(self, des_index, des_pos_arr, des_weight_arr):
+        """Updating desired positions of desired points
+
+        Args:
+            des_index (pointer[float]): desiredness [0,1]
+            des_pos_arr (pointer[float]): array of desired points
+            des_weight_arr (pointer[float]): array of weights 
+        """
         for i, des in enumerate(des_index):
             arr = (ctypes.c_float * len(des_pos_arr[3*i:3*i+3]))(*des_pos_arr[3*i:3*i+3])
             if (des == 1):
@@ -71,7 +76,14 @@ class MBS_DesIK(MBS):
             else:
                 self.lib.SET_DESIRED_POINTS(i,arr,0.0)
     
-    def SetDesDirectionArray(self, des_index, des_dir_arr, des_weight_arr):
+    def setDesDirectionArray(self, des_index, des_dir_arr, des_weight_arr):
+        """Updating desired directions of desired dirs
+
+        Args:
+            des_index (pointer[float]): desiredness [0,1]
+            des_dir_arr (pointer[float]): array of desired directions
+            des_weight_arr (pointer[float]): array of weights
+        """
         for i, des in enumerate(des_index):
             arr = (ctypes.c_float * len(des_dir_arr[3*i:3*i+3]))(*des_dir_arr[3*i:3*i+3])
             if (des == 1):
@@ -89,9 +101,7 @@ class MBS_DesIK(MBS):
         self.lib.ADD_DESIRED_DIR(i,world_dir,weight)
 
     def doIK(self):
-        """
-        Args:
-        do retargeting solver
+        """Do whole-body IK
         """
         self.lib.DO_POSE_IK()
 

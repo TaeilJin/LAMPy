@@ -1,0 +1,638 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classmg_pose_i_k_solver" kind="class" language="C++" prot="public">
+    <compoundname>mgPoseIKSolver</compoundname>
+    <includes refid="mg_pose_transfer___i_k_8h" local="no">mgPoseTransfer_IK.h</includes>
+    <innerclass refid="structmg_pose_i_k_solver_1_1idx_desired" prot="public">mgPoseIKSolver::idxDesired</innerclass>
+    <innerclass refid="structmg_pose_i_k_solver_1_1idx_desired_dir" prot="public">mgPoseIKSolver::idxDesiredDir</innerclass>
+    <innerclass refid="structmg_pose_i_k_solver_1_1idx_dir_transfer" prot="public">mgPoseIKSolver::idxDirTransfer</innerclass>
+    <innerclass refid="structmg_pose_i_k_solver_1_1idx_pos_transfer" prot="public">mgPoseIKSolver::idxPosTransfer</innerclass>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classmg_pose_i_k_solver_1acb52b0788e6f34cbfde8fc7be65ccd19" prot="public" static="no" mutable="no">
+        <type>arma::vec</type>
+        <definition>arma::vec mgPoseIKSolver::preferredTarCoords</definition>
+        <argsstring></argsstring>
+        <name>preferredTarCoords</name>
+        <qualifiedname>mgPoseIKSolver::preferredTarCoords</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="48" column="11" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmg_pose_i_k_solver_1a721d3cfdf5b5d3814a2a8960445df213" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double mgPoseIKSolver::preferredTarCoordsWeight</definition>
+        <argsstring></argsstring>
+        <name>preferredTarCoordsWeight</name>
+        <qualifiedname>mgPoseIKSolver::preferredTarCoordsWeight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="49" column="8" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmg_pose_i_k_solver_1a20c9e3b5517a6aa38597466f15e73b75" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double mgPoseIKSolver::scale</definition>
+        <argsstring></argsstring>
+        <name>scale</name>
+        <qualifiedname>mgPoseIKSolver::scale</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="50" column="8" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmg_pose_i_k_solver_1ab37785dad5215ed4835c298a80e04c03" prot="public" static="no" mutable="no">
+        <type>gMultibodySystem *</type>
+        <definition>gMultibodySystem* mgPoseIKSolver::src</definition>
+        <argsstring></argsstring>
+        <name>src</name>
+        <qualifiedname>mgPoseIKSolver::src</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>tar: target character to transfer pose to <linebreak/>
+src: source character to import pose from <linebreak/>
+tar/srcPoints: a set of sample points attached to characters. tarPoints and srcPoints must be consistent (i.e., if tarPoints[0] <linebreak/>
+is attached to tar&apos;s right elbow, srcPoints[0] must be attached to the src&apos;s right elbow) <linebreak/>
+hence, it must be that tarPoints.size() = srcPoints.size() = namePoints.size() <linebreak/>
+namePoints stores the name of the points used for identifying the points. <linebreak/>
+directions: list of indices of two points to form a direction vector <linebreak/>
+positions: list of point indices that will be glued from srcPoints to tarPoints <linebreak/>
+<linebreak/>
+how to transfer pose: <linebreak/>
+We try to make the direction vector made by two points (from pointPairs) of tarCharacter match that of the corresponding vector of srcCharacter <linebreak/>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="64" column="18" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmg_pose_i_k_solver_1a71556d7a284c8969428abfb121a58a01" prot="public" static="no" mutable="no">
+        <type>gMultibodySystem *</type>
+        <definition>gMultibodySystem* mgPoseIKSolver::tar</definition>
+        <argsstring></argsstring>
+        <name>tar</name>
+        <qualifiedname>mgPoseIKSolver::tar</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="65" column="18" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmg_pose_i_k_solver_1aa90f9734f7f95c53fabdd1f9fd102572" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; mgPoseIKSolver::namePoints</definition>
+        <argsstring></argsstring>
+        <name>namePoints</name>
+        <qualifiedname>mgPoseIKSolver::namePoints</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="66" column="13" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmg_pose_i_k_solver_1a5ad2a68aca883aeb269cfea4af1457a1" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; gAttachedPoint &gt;</type>
+        <definition>std::vector&lt;gAttachedPoint&gt; mgPoseIKSolver::srcPoints</definition>
+        <argsstring></argsstring>
+        <name>srcPoints</name>
+        <qualifiedname>mgPoseIKSolver::srcPoints</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="67" column="13" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmg_pose_i_k_solver_1a37d237e72fcd90a020f0bb46864e9a10" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; gAttachedPoint &gt;</type>
+        <definition>std::vector&lt;gAttachedPoint&gt; mgPoseIKSolver::tarPoints</definition>
+        <argsstring></argsstring>
+        <name>tarPoints</name>
+        <qualifiedname>mgPoseIKSolver::tarPoints</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="68" column="13" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmg_pose_i_k_solver_1a25af9dbe7e5fa1ea78ffee25309cbbd5" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; gAttachedPoint &gt;</type>
+        <definition>std::vector&lt;gAttachedPoint&gt; mgPoseIKSolver::tarParentPoints</definition>
+        <argsstring></argsstring>
+        <name>tarParentPoints</name>
+        <qualifiedname>mgPoseIKSolver::tarParentPoints</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="69" column="13" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmg_pose_i_k_solver_1abbdcfe441e22dfae840be5d8dbf4e92c" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structmg_pose_i_k_solver_1_1idx_desired" kindref="compound">idxDesired</ref> &gt;</type>
+        <definition>std::vector&lt;idxDesired&gt; mgPoseIKSolver::desiredPoints</definition>
+        <argsstring></argsstring>
+        <name>desiredPoints</name>
+        <qualifiedname>mgPoseIKSolver::desiredPoints</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="70" column="12" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmg_pose_i_k_solver_1ab75136e916d0fdf45219880d5b418914" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structmg_pose_i_k_solver_1_1idx_desired_dir" kindref="compound">idxDesiredDir</ref> &gt;</type>
+        <definition>std::vector&lt;idxDesiredDir&gt; mgPoseIKSolver::desiredDirs</definition>
+        <argsstring></argsstring>
+        <name>desiredDirs</name>
+        <qualifiedname>mgPoseIKSolver::desiredDirs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="71" column="14" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmg_pose_i_k_solver_1ac0363d9ae5a2efc6470d7a75ba8f9485" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structmg_pose_i_k_solver_1_1idx_dir_transfer" kindref="compound">idxDirTransfer</ref> &gt;</type>
+        <definition>std::vector&lt;idxDirTransfer&gt; mgPoseIKSolver::directions</definition>
+        <argsstring></argsstring>
+        <name>directions</name>
+        <qualifiedname>mgPoseIKSolver::directions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="72" column="13" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmg_pose_i_k_solver_1a757acb99a46fa7a2a45f0cdd2db9a5b7" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structmg_pose_i_k_solver_1_1idx_pos_transfer" kindref="compound">idxPosTransfer</ref> &gt;</type>
+        <definition>std::vector&lt;idxPosTransfer&gt; mgPoseIKSolver::positions</definition>
+        <argsstring></argsstring>
+        <name>positions</name>
+        <qualifiedname>mgPoseIKSolver::positions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="73" column="13" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmg_pose_i_k_solver_1ac0f012ad987a866322eda8bbe01ef640" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double mgPoseIKSolver::LevMarOpts[5]</definition>
+        <argsstring>[5]</argsstring>
+        <name>LevMarOpts</name>
+        <qualifiedname>mgPoseIKSolver::LevMarOpts</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="82" column="8" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmg_pose_i_k_solver_1aab24f357071d52840e70b335e29c61f6" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double mgPoseIKSolver::LevMarInfo[LM_INFO_SZ]</definition>
+        <argsstring>[LM_INFO_SZ]</argsstring>
+        <name>LevMarInfo</name>
+        <qualifiedname>mgPoseIKSolver::LevMarInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="100" column="8" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmg_pose_i_k_solver_1a5bb6adc9d0f38f6396838b5e6fbfafd7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>mgPoseIKSolver::mgPoseIKSolver</definition>
+        <argsstring>(gMultibodySystem *srcCharacter, gMultibodySystem *tarCharacter)</argsstring>
+        <name>mgPoseIKSolver</name>
+        <qualifiedname>mgPoseIKSolver::mgPoseIKSolver</qualifiedname>
+        <param>
+          <type>gMultibodySystem *</type>
+          <declname>srcCharacter</declname>
+        </param>
+        <param>
+          <type>gMultibodySystem *</type>
+          <declname>tarCharacter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>motion will be transferred from srcCharacter to tarCharacter. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="105" column="1" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="105" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classmg_pose_i_k_solver_1a2e256f99dccf77d2bf87a85af2eb291f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual mgPoseIKSolver::~mgPoseIKSolver</definition>
+        <argsstring>()</argsstring>
+        <name>~mgPoseIKSolver</name>
+        <qualifiedname>mgPoseIKSolver::~mgPoseIKSolver</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="121" column="9" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="121" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classmg_pose_i_k_solver_1a80d769c6c908bfeb3e8f6034717dda21" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mgPoseIKSolver::addPoint</definition>
+        <argsstring>(const char *name, gLink &amp;srcLink, gVec3 &amp;srcPosLocal, gLink &amp;tarLink, gVec3 &amp;tarPosLocal)</argsstring>
+        <name>addPoint</name>
+        <qualifiedname>mgPoseIKSolver::addPoint</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>gLink &amp;</type>
+          <declname>srcLink</declname>
+        </param>
+        <param>
+          <type>gVec3 &amp;</type>
+          <declname>srcPosLocal</declname>
+        </param>
+        <param>
+          <type>gLink &amp;</type>
+          <declname>tarLink</declname>
+        </param>
+        <param>
+          <type>gVec3 &amp;</type>
+          <declname>tarPosLocal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>add points used for pose transfer. name: name of point. used for identification. srcLink/tarLink: link of src/tar to attach a point to srcPosLocal/tarPosLocal: position of a point wrt srcLink/tarLink&apos;s body frame <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="128" column="6" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="128" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classmg_pose_i_k_solver_1a7421604bf39ae9e84b2665e4a0730590" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mgPoseIKSolver::addPoint_inWorldOffset</definition>
+        <argsstring>(const char *name, gLink &amp;srcLink, gVec3 &amp;srcPosWorld, gLink &amp;tarLink, gVec3 &amp;tarPosWorld)</argsstring>
+        <name>addPoint_inWorldOffset</name>
+        <qualifiedname>mgPoseIKSolver::addPoint_inWorldOffset</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>gLink &amp;</type>
+          <declname>srcLink</declname>
+        </param>
+        <param>
+          <type>gVec3 &amp;</type>
+          <declname>srcPosWorld</declname>
+        </param>
+        <param>
+          <type>gLink &amp;</type>
+          <declname>tarLink</declname>
+        </param>
+        <param>
+          <type>gVec3 &amp;</type>
+          <declname>tarPosWorld</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="137" column="6" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="137" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classmg_pose_i_k_solver_1a6876a823900772b3f28d4ab0bb4b6470" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mgPoseIKSolver::addDesiredJoint</definition>
+        <argsstring>(const char *name, gLink &amp;srcLink, gVec3 &amp;srcPosLocal)</argsstring>
+        <name>addDesiredJoint</name>
+        <qualifiedname>mgPoseIKSolver::addDesiredJoint</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>gLink &amp;</type>
+          <declname>srcLink</declname>
+        </param>
+        <param>
+          <type>gVec3 &amp;</type>
+          <declname>srcPosLocal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="145" column="6" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="145" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classmg_pose_i_k_solver_1a735bff9e8480ba7911548e40cc418b8f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mgPoseIKSolver::addDesiredJointPoseDir</definition>
+        <argsstring>(const char *name, gLink &amp;srcLink, gVec3 &amp;srcPosLocal, gLink &amp;dir_end, gVec3 &amp;dir_end_PosLocal)</argsstring>
+        <name>addDesiredJointPoseDir</name>
+        <qualifiedname>mgPoseIKSolver::addDesiredJointPoseDir</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>gLink &amp;</type>
+          <declname>srcLink</declname>
+        </param>
+        <param>
+          <type>gVec3 &amp;</type>
+          <declname>srcPosLocal</declname>
+        </param>
+        <param>
+          <type>gLink &amp;</type>
+          <declname>dir_end</declname>
+        </param>
+        <param>
+          <type>gVec3 &amp;</type>
+          <declname>dir_end_PosLocal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="151" column="6" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="151" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classmg_pose_i_k_solver_1a6d9e089c0c3a3f105cc920254b2ca193" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mgPoseIKSolver::addDirectionObjective</definition>
+        <argsstring>(const char *pointName0, const char *pointName1, double weight)</argsstring>
+        <name>addDirectionObjective</name>
+        <qualifiedname>mgPoseIKSolver::addDirectionObjective</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>pointName0</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>pointName1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>weight</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>add a direction objective for pose transfer direction is defined by a vector from pointName0 to pointName1 weight: importance of this objective returns true if succeed.</para>
+<para>add a direction objective for pose transfer direction is defined by a vector from pointName0 to pointName1 weight: importance of this objective </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="166" column="6" bodyfile="MBS_CDLL/mgPoseTransfer_IK.cpp" bodystart="260" bodyend="297"/>
+      </memberdef>
+      <memberdef kind="function" id="classmg_pose_i_k_solver_1ae435cfde0821962119b3929cec8bcd92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mgPoseIKSolver::addPositionObjective</definition>
+        <argsstring>(const char *pointName, double weight)</argsstring>
+        <name>addPositionObjective</name>
+        <qualifiedname>mgPoseIKSolver::addPositionObjective</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>pointName</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>weight</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>add a position objective for pose transfer this tries to match the absolute position of the point of target character to that of source character. weight: importance of this objective returns true if succeed.</para>
+<para>add a position objective for pose transfer this tries to match the absolute position of the point of target character to that of source character. weight: importance of this objective </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="174" column="6" bodyfile="MBS_CDLL/mgPoseTransfer_IK.cpp" bodystart="304" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="classmg_pose_i_k_solver_1ab1d291843a9757301bd407f3a0b5d4ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mgPoseIKSolver::addPositionObjective</definition>
+        <argsstring>(const char *pointName, double weight, double scale)</argsstring>
+        <name>addPositionObjective</name>
+        <qualifiedname>mgPoseIKSolver::addPositionObjective</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>pointName</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>weight</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="175" column="6" bodyfile="MBS_CDLL/mgPoseTransfer_IK.cpp" bodystart="326" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="classmg_pose_i_k_solver_1abe8a4ca6135fdd42886a789324307a6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mgPoseIKSolver::addDesiredObjective</definition>
+        <argsstring>(const char *pointName, double weight, gVec3 desiredpos)</argsstring>
+        <name>addDesiredObjective</name>
+        <qualifiedname>mgPoseIKSolver::addDesiredObjective</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>pointName</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>weight</declname>
+        </param>
+        <param>
+          <type>gVec3</type>
+          <declname>desiredpos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="176" column="6" bodyfile="MBS_CDLL/mgPoseTransfer_IK.cpp" bodystart="348" bodyend="369"/>
+      </memberdef>
+      <memberdef kind="function" id="classmg_pose_i_k_solver_1a48d7fecf8468bfeb851ce084b518a8e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool mgPoseIKSolver::addDesiredDirObjective</definition>
+        <argsstring>(const char *pointName, double weight_dir, gVec3 desireddir)</argsstring>
+        <name>addDesiredDirObjective</name>
+        <qualifiedname>mgPoseIKSolver::addDesiredDirObjective</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>pointName</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>weight_dir</declname>
+        </param>
+        <param>
+          <type>gVec3</type>
+          <declname>desireddir</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="177" column="6" bodyfile="MBS_CDLL/mgPoseTransfer_IK.cpp" bodystart="371" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="classmg_pose_i_k_solver_1a118bd115fb401575aa52ff38b7114031" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mgPoseIKSolver::transferPoseLevMar</definition>
+        <argsstring>(gXMat &amp;offset)</argsstring>
+        <name>transferPoseLevMar</name>
+        <qualifiedname>mgPoseIKSolver::transferPoseLevMar</qualifiedname>
+        <param>
+          <type>gXMat &amp;</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>this method transfers pose from src to tar </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="183" column="5" bodyfile="MBS_CDLL/mgPoseTransfer_IK.cpp" bodystart="138" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="classmg_pose_i_k_solver_1a4c7c62efe282d776a851d899da85f6c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mgPoseIKSolver::addDesired</definition>
+        <argsstring>(const char *map_name, gVec3 desired)</argsstring>
+        <name>addDesired</name>
+        <qualifiedname>mgPoseIKSolver::addDesired</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>map_name</declname>
+        </param>
+        <param>
+          <type>gVec3</type>
+          <declname>desired</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="185" column="5" bodyfile="MBS_CDLL/mgPoseTransfer_IK.cpp" bodystart="194" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="classmg_pose_i_k_solver_1a8127f215495ef61322e5cf21a9a921b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mgPoseIKSolver::DesiredLevMar</definition>
+        <argsstring>(gXMat &amp;offset)</argsstring>
+        <name>DesiredLevMar</name>
+        <qualifiedname>mgPoseIKSolver::DesiredLevMar</qualifiedname>
+        <param>
+          <type>gXMat &amp;</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="186" column="5" bodyfile="MBS_CDLL/mgPoseTransfer_IK.cpp" bodystart="201" bodyend="252"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This class provides method to transfer a pose from a character to another character. Refer to Example8_CharacterRetargetting project for the usage of this class. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="date"><para>2015/03/26 </para>
+</simplesect>
+<simplesect kind="author"><para>Sung-Hee Lee </para>
+</simplesect>
+<simplesect kind="warning"><para><linebreak/>
+ </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="20" column="1" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="20" bodyend="189"/>
+    <listofallmembers>
+      <member refid="classmg_pose_i_k_solver_1a4c7c62efe282d776a851d899da85f6c9" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>addDesired</name></member>
+      <member refid="classmg_pose_i_k_solver_1a48d7fecf8468bfeb851ce084b518a8e7" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>addDesiredDirObjective</name></member>
+      <member refid="classmg_pose_i_k_solver_1a6876a823900772b3f28d4ab0bb4b6470" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>addDesiredJoint</name></member>
+      <member refid="classmg_pose_i_k_solver_1a735bff9e8480ba7911548e40cc418b8f" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>addDesiredJointPoseDir</name></member>
+      <member refid="classmg_pose_i_k_solver_1abe8a4ca6135fdd42886a789324307a6c" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>addDesiredObjective</name></member>
+      <member refid="classmg_pose_i_k_solver_1a6d9e089c0c3a3f105cc920254b2ca193" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>addDirectionObjective</name></member>
+      <member refid="classmg_pose_i_k_solver_1a80d769c6c908bfeb3e8f6034717dda21" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>addPoint</name></member>
+      <member refid="classmg_pose_i_k_solver_1a7421604bf39ae9e84b2665e4a0730590" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>addPoint_inWorldOffset</name></member>
+      <member refid="classmg_pose_i_k_solver_1ae435cfde0821962119b3929cec8bcd92" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>addPositionObjective</name></member>
+      <member refid="classmg_pose_i_k_solver_1ab1d291843a9757301bd407f3a0b5d4ce" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>addPositionObjective</name></member>
+      <member refid="classmg_pose_i_k_solver_1ab75136e916d0fdf45219880d5b418914" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>desiredDirs</name></member>
+      <member refid="classmg_pose_i_k_solver_1a8127f215495ef61322e5cf21a9a921b4" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>DesiredLevMar</name></member>
+      <member refid="classmg_pose_i_k_solver_1abbdcfe441e22dfae840be5d8dbf4e92c" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>desiredPoints</name></member>
+      <member refid="classmg_pose_i_k_solver_1ac0363d9ae5a2efc6470d7a75ba8f9485" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>directions</name></member>
+      <member refid="classmg_pose_i_k_solver_1aab24f357071d52840e70b335e29c61f6" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>LevMarInfo</name></member>
+      <member refid="classmg_pose_i_k_solver_1ac0f012ad987a866322eda8bbe01ef640" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>LevMarOpts</name></member>
+      <member refid="classmg_pose_i_k_solver_1a5bb6adc9d0f38f6396838b5e6fbfafd7" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>mgPoseIKSolver</name></member>
+      <member refid="classmg_pose_i_k_solver_1aa90f9734f7f95c53fabdd1f9fd102572" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>namePoints</name></member>
+      <member refid="classmg_pose_i_k_solver_1a757acb99a46fa7a2a45f0cdd2db9a5b7" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>positions</name></member>
+      <member refid="classmg_pose_i_k_solver_1acb52b0788e6f34cbfde8fc7be65ccd19" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>preferredTarCoords</name></member>
+      <member refid="classmg_pose_i_k_solver_1a721d3cfdf5b5d3814a2a8960445df213" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>preferredTarCoordsWeight</name></member>
+      <member refid="classmg_pose_i_k_solver_1a20c9e3b5517a6aa38597466f15e73b75" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>scale</name></member>
+      <member refid="classmg_pose_i_k_solver_1ab37785dad5215ed4835c298a80e04c03" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>src</name></member>
+      <member refid="classmg_pose_i_k_solver_1a5ad2a68aca883aeb269cfea4af1457a1" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>srcPoints</name></member>
+      <member refid="classmg_pose_i_k_solver_1a71556d7a284c8969428abfb121a58a01" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>tar</name></member>
+      <member refid="classmg_pose_i_k_solver_1a25af9dbe7e5fa1ea78ffee25309cbbd5" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>tarParentPoints</name></member>
+      <member refid="classmg_pose_i_k_solver_1a37d237e72fcd90a020f0bb46864e9a10" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>tarPoints</name></member>
+      <member refid="classmg_pose_i_k_solver_1a118bd115fb401575aa52ff38b7114031" prot="public" virt="non-virtual"><scope>mgPoseIKSolver</scope><name>transferPoseLevMar</name></member>
+      <member refid="classmg_pose_i_k_solver_1a2e256f99dccf77d2bf87a85af2eb291f" prot="public" virt="virtual"><scope>mgPoseIKSolver</scope><name>~mgPoseIKSolver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

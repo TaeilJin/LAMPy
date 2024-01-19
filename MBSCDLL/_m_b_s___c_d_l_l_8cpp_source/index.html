@@ -1,0 +1,1719 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+    
+    
+      
+        <title>File MBS_CDLL.cpp - LAMPy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#file-mbs_cdllcpp" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="LAMPy" class="md-header__button md-logo" aria-label="LAMPy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LAMPy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              File MBS_CDLL.cpp
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="LAMPy" class="md-nav__button md-logo" aria-label="LAMPy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    LAMPy
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MBS Python Manager
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            MBS Python Manager
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MBS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MBS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MBS_IK/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MBS_IK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MBS_retargeting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MBS_Retargeting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MBSCDLL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            MBSCDLL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../links/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Links
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Classes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Classes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../annotated/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hierarchy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Hierarchy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_members/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Members
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_member_functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Member Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_member_variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Member Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_member_typedefs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Member Typedefs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_member_enums/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Member Enumerations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="file-mbs_cdllcpp">File MBS_CDLL.cpp</h1>
+<p><a href="../files/"><strong>File List</strong></a> <strong>&gt;</strong> <a href="../dir_ddc84d54b9d1cd5babbd6fb469a13a43/"><strong>MBS_CDLL</strong></a> <strong>&gt;</strong> <a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a></p>
+<p><a href="../_m_b_s___c_d_l_l_8cpp/">Go to the documentation of this file</a></p>
+<pre><code class="language-C++">
+
+#include &lt;Windows.h&gt;
+#include &quot;MBS/MBSLoader.h&quot;
+#include &quot;saveBVH.h&quot;
+#include &quot;mgPoseTransfer_IK.h&quot;
+
+#ifdef  UNITY_MW_DLL_TEST_EXPORTS
+#define DLL_EXPORT __declspec(dllexport)
+#else
+#define DLL_EXPORT __declspec(dllimport)
+#endif //  DLL_TEST_EXPORTS
+
+
+double DEBUG_DRAW_CONSTRAINT_SIZE = 2;
+gVec3 MW_GRAVITY_VECTOR(0, -9.8, 0);
+gVec3 MW_GROUND_NORMAL(0, 1, 0);
+
+gMultibodySystem* mbs;
+//-- retarget Xsense-&gt;Ybot
+gMultibodySystem* mbs_src;
+gMultibodySystem* mbs_tar;
+
+mgPoseIKSolver* g_poseTrans_Avatar; // Ybot -&gt; Avatar
+
+float srcFrameTime = 30;
+arma::mat tarQuaternions;
+arma::mat g_refCoord;
+saveBVH* g_saveBVH;
+
+void SetJntRotDirOBJ(mgPoseIKSolver* poseTrans, char* txt_id, char* src_jnt, char* tar_jnt) {
+
+    poseTrans-&gt;addPoint(txt_id, *poseTrans-&gt;src-&gt;findLink(src_jnt), gVec3(0, 0, 0), *poseTrans-&gt;tar-&gt;findLink(tar_jnt), gVec3(0, 0, 0));
+}
+void SetJntRotDirOBJ(mgPoseIKSolver* poseTrans, char* txt_id, char* src_jnt, gVec3 s_X, gVec3 s_Z, char* tar_jnt, gVec3 t_X, gVec3 t_Z) {
+    gLink* srcLink = poseTrans-&gt;src-&gt;findLink(src_jnt);
+    gLink* tarLink = poseTrans-&gt;tar-&gt;findLink(tar_jnt);
+
+    if (srcLink == NULL || tarLink == NULL)
+        std::cout &lt;&lt; &quot;you should check joint names&quot; &lt;&lt; std::endl;
+    else {
+        poseTrans-&gt;addPoint(txt_id, *poseTrans-&gt;src-&gt;findLink(src_jnt), gVec3(0, 0, 0), *poseTrans-&gt;tar-&gt;findLink(tar_jnt), gVec3(0, 0, 0));
+        char p_x[45]; char p_z[45]; char p_y[45];
+        strcpy(p_x, txt_id); strcat(p_x, &quot;_x&quot;);
+        strcpy(p_y, txt_id); strcat(p_y, &quot;_y&quot;);
+        strcpy(p_z, txt_id); strcat(p_z, &quot;_z&quot;);
+        //poseTrans-&gt;addPoint(p_x, *poseTrans-&gt;src-&gt;findLink(src_jnt), s_X, *poseTrans-&gt;tar-&gt;findLink(tar_jnt), t_X);
+        //poseTrans-&gt;addPoint(p_y, *poseTrans-&gt;src-&gt;findLink(src_jnt), gVec3(0, 1, 0), *poseTrans-&gt;tar-&gt;findLink(tar_jnt), gVec3(0, 1, 0));
+        //poseTrans-&gt;addPoint(p_z, *poseTrans-&gt;src-&gt;findLink(src_jnt), s_Z, *poseTrans-&gt;tar-&gt;findLink(tar_jnt), t_Z);
+
+        poseTrans-&gt;addPoint(p_x, *poseTrans-&gt;src-&gt;findLink(src_jnt), poseTrans-&gt;src-&gt;findLink(src_jnt)-&gt;frame().rotX(),
+            *poseTrans-&gt;tar-&gt;findLink(tar_jnt), poseTrans-&gt;tar-&gt;findLink(tar_jnt)-&gt;frame().rotX());
+        poseTrans-&gt;addPoint(p_y, *poseTrans-&gt;src-&gt;findLink(src_jnt), poseTrans-&gt;src-&gt;findLink(src_jnt)-&gt;frame().rotY(),
+            *poseTrans-&gt;tar-&gt;findLink(tar_jnt), poseTrans-&gt;tar-&gt;findLink(tar_jnt)-&gt;frame().rotY());
+        poseTrans-&gt;addPoint(p_z, *poseTrans-&gt;src-&gt;findLink(src_jnt), poseTrans-&gt;src-&gt;findLink(src_jnt)-&gt;frame().rotZ(),
+            *poseTrans-&gt;tar-&gt;findLink(tar_jnt), poseTrans-&gt;tar-&gt;findLink(tar_jnt)-&gt;frame().rotZ());
+
+
+
+        poseTrans-&gt;addDirectionObjective(txt_id, p_x, 1.0);
+        poseTrans-&gt;addDirectionObjective(txt_id, p_z, 1.0);
+        poseTrans-&gt;addDirectionObjective(txt_id, p_y, 1.0);
+    }
+}
+void SetJntRotDirOBJ(mgPoseIKSolver* poseTrans, char* txt_id, char* src_jnt, gVec3 s_X, gVec3 s_Z, gVec3 s_Y, char* tar_jnt, gVec3 t_X, gVec3 t_Z, gVec3 t_Y) {
+    gLink* srcLink = poseTrans-&gt;src-&gt;findLink(src_jnt);
+    gLink* tarLink = poseTrans-&gt;tar-&gt;findLink(tar_jnt);
+
+    if (srcLink == NULL || tarLink == NULL)
+        std::cout &lt;&lt; &quot;you should check joint names&quot; &lt;&lt; std::endl;
+    else {
+        poseTrans-&gt;addPoint(txt_id, *poseTrans-&gt;src-&gt;findLink(src_jnt), gVec3(0, 0, 0), *poseTrans-&gt;tar-&gt;findLink(tar_jnt), gVec3(0, 0, 0));
+        char p_x[45]; char p_z[45]; char p_y[45];
+        strcpy(p_x, txt_id); strcat(p_x, &quot;_x&quot;);
+        strcpy(p_y, txt_id); strcat(p_y, &quot;_y&quot;);
+        strcpy(p_z, txt_id); strcat(p_z, &quot;_z&quot;);
+        //poseTrans-&gt;addPoint(p_x, *poseTrans-&gt;src-&gt;findLink(src_jnt), s_X, *poseTrans-&gt;tar-&gt;findLink(tar_jnt), t_X);
+        //poseTrans-&gt;addPoint(p_y, *poseTrans-&gt;src-&gt;findLink(src_jnt), s_Y, *poseTrans-&gt;tar-&gt;findLink(tar_jnt), t_Y);
+        //poseTrans-&gt;addPoint(p_z, *poseTrans-&gt;src-&gt;findLink(src_jnt), s_Z, *poseTrans-&gt;tar-&gt;findLink(tar_jnt), t_Z);
+
+        gVec3 sj_pos = poseTrans-&gt;src-&gt;findLink(src_jnt)-&gt;frame().trn();
+        gVec3 tj_pos = poseTrans-&gt;tar-&gt;findLink(tar_jnt)-&gt;frame().trn();
+        poseTrans-&gt;addPoint_inWorldOffset(p_x, *poseTrans-&gt;src-&gt;findLink(src_jnt), gVec3(sj_pos.x() + 1, sj_pos.y(), sj_pos.z()), *poseTrans-&gt;tar-&gt;findLink(tar_jnt), gVec3(tj_pos.x()+1, tj_pos.y(), tj_pos.z()));
+        poseTrans-&gt;addPoint_inWorldOffset(p_y, *poseTrans-&gt;src-&gt;findLink(src_jnt), gVec3(sj_pos.x() + 0, sj_pos.y()+1, sj_pos.z()), *poseTrans-&gt;tar-&gt;findLink(tar_jnt), gVec3(tj_pos.x() + 0, tj_pos.y()+1, tj_pos.z()));
+        poseTrans-&gt;addPoint_inWorldOffset(p_z, *poseTrans-&gt;src-&gt;findLink(src_jnt), gVec3(sj_pos.x() + 0, sj_pos.y(), sj_pos.z()+1), *poseTrans-&gt;tar-&gt;findLink(tar_jnt), gVec3(tj_pos.x() + 0, tj_pos.y(), tj_pos.z()+1));
+
+        poseTrans-&gt;addDirectionObjective(txt_id, p_x, 1.0);
+        poseTrans-&gt;addDirectionObjective(txt_id, p_z, 1.0);
+        poseTrans-&gt;addDirectionObjective(txt_id, p_y, 1.0);
+    }
+}
+gRotMat TranseRotUnitytoMW(float x, float y, float z, float w) {
+    gQuat quat; quat.set(x,y,z,w);
+
+    gQuat quat_rH = quat;
+    gQuat quat_lH;
+    //convert righthand quaternion to lefthand quaternion
+    quat_lH.setX(quat_rH.x());
+    quat_lH.setY(-1.0 * quat_rH.y());
+    quat_lH.setZ(-1.0 * quat_rH.z());
+    quat_lH.setW(quat_rH.w());
+
+    /*gRotMat rot_LeftHanded = quat.inRotMatrix();
+    gRotMat rot_RightHanded;
+    double* convert_L2R = new double[9];
+    convert_L2R[0] = rot_LeftHanded.e(0);    convert_L2R[3] = -1 * rot_LeftHanded.e(3); convert_L2R[6] = -1 * rot_LeftHanded.e(6);
+    convert_L2R[1] = -1 * rot_LeftHanded.e(1); convert_L2R[4] = rot_LeftHanded.e(4);    convert_L2R[7] = rot_LeftHanded.e(7);
+    convert_L2R[2] = -1 * rot_LeftHanded.e(2); convert_L2R[5] = rot_LeftHanded.e(5);    convert_L2R[8] = rot_LeftHanded.e(8);
+    rot_RightHanded.set(convert_L2R);*/
+
+    return quat_lH.inRotMatrix();
+}
+extern &quot;C&quot;
+{
+    /* MBS CDLL */
+    // generate the MBS File
+    DLL_EXPORT void GEN_MBS_TXTFILE(LPCSTR tarCharacterMotionFile, LPCSTR tarCharactertxt) {
+        MotionLoader loader;
+        loader.loadMotionFile(tarCharacterMotionFile);
+        mgData* motion = loader.getMotion();
+        mgSkeleton* skeleton = loader.getSkeleton();
+        srcFrameTime = motion-&gt;frameTime;
+
+        std::cout &lt;&lt; &quot;|--- load src character file ---|&quot; &lt;&lt; std::endl;
+        mgSkeletonToBCharacter::saveToBCharacter(skeleton, tarCharactertxt, 70.0);
+
+    }
+
+
+
+    // (0: src, 1 : tar, 2 : IK)
+    // update specific MBS 
+    DLL_EXPORT void UPDATE_MBS(int mbs_i) {
+        if(mbs_i == 0)
+            mbs_src-&gt;updateKinematicsUptoPos();
+        else if (mbs_i == 1)
+            mbs_tar-&gt;updateKinematicsUptoPos();
+        else if (mbs_i == 2)
+            mbs-&gt;updateKinematicsUptoPos();
+    }
+    // update pose of MBS
+    DLL_EXPORT void SET_MBS_FromEXP(int mbs_i, float* joint_vec) {
+
+        if (mbs_i == 0) {
+            // float �迭�� arma::vec�� ����
+            int ndof = mbs_src-&gt;numLinks() * 3 + 3;
+            arma::vec lca;
+            lca.set_size(ndof);
+            std::memcpy(lca.memptr(), joint_vec, ndof);
+            mbs_src-&gt;setFromCompactCoordArray(lca);
+        }
+        else if (mbs_i == 1) {
+            // float �迭�� arma::vec�� ����
+            int ndof = mbs_tar-&gt;numLinks() * 3 + 3;
+            arma::vec lca;
+            lca.set_size(ndof);
+            std::memcpy(lca.memptr(), joint_vec, ndof);
+            mbs_tar-&gt;setFromCompactCoordArray(lca);
+        }
+        else if (mbs_i == 2) {
+            // float �迭�� arma::vec�� ����
+            int ndof = mbs-&gt;numLinks() * 3 + 3;
+            arma::vec lca;
+            lca.set_size(ndof);
+            std::memcpy(lca.memptr(), joint_vec, ndof);
+            mbs-&gt;setFromCompactCoordArray(lca);
+        }
+        //
+    }
+    DLL_EXPORT void SET_MBS_JOINT_FromEXP(int joint_id, float* joint_vec) {
+        gRotMat rot; rot.makeExp(gVec3(joint_vec[0], joint_vec[1], joint_vec[2]));
+        mbs-&gt;link(joint_id)-&gt;setFromCompactCoordArray(rot.cptr());
+    }
+    DLL_EXPORT void SET_MBS_JOINT_FromQuat(int joint_id, float* joint_vec) {
+        gQuat quat; quat.set(joint_vec[0], joint_vec[1], joint_vec[2], joint_vec[3]);
+
+        gXMat mat_G = mbs-&gt;link(joint_id)-&gt;localFrame();
+        mat_G.setRot(quat.inRotMatrix());
+
+        mbs-&gt;link(joint_id)-&gt;setFromCompactCoordArray(mat_G.rotInQuat().cptr());
+    }
+
+    // read pose of MBS (float*)
+    DLL_EXPORT const float* READ_MBS_POSE(int mbs_i) {
+
+        if (mbs_i == 0) {
+            std::cout &lt;&lt; &quot; mbs dof &quot; &lt;&lt; mbs_src-&gt;dof() &lt;&lt; std::endl;
+
+            arma::vec lca(mbs_src-&gt;dof());
+            mbs_src-&gt;getCompactCoordArray(lca);
+
+            float* data = new float[mbs_src-&gt;dof()];
+
+            for (int i = 0; i &lt; mbs_src-&gt;dof(); i++) {
+                data[i] = lca[i];
+            }
+
+            //std::cout &lt;&lt; &quot; lca &quot; &lt;&lt; lca &lt;&lt; std::endl;
+
+            return data;
+        }
+        else if (mbs_i == 1) {
+            std::cout &lt;&lt; &quot; mbs dof &quot; &lt;&lt; mbs_tar-&gt;dof() &lt;&lt; std::endl;
+
+            arma::vec lca(mbs_tar-&gt;dof());
+            mbs_tar-&gt;getCompactCoordArray(lca);
+
+            float* data = new float[mbs_tar-&gt;dof()];
+
+            for (int i = 0; i &lt; mbs_tar-&gt;dof(); i++) {
+                data[i] = lca[i];
+            }
+
+            //std::cout &lt;&lt; &quot; lca &quot; &lt;&lt; lca &lt;&lt; std::endl;
+
+            return data;
+        }
+        else if (mbs_i == 2) {
+            std::cout &lt;&lt; &quot; mbs dof &quot; &lt;&lt; mbs-&gt;dof() &lt;&lt; std::endl;
+
+            arma::vec lca(mbs-&gt;dof());
+            mbs-&gt;getCompactCoordArray(lca);
+
+            float* data = new float[mbs-&gt;dof()];
+
+            for (int i = 0; i &lt; mbs-&gt;dof(); i++) {
+                data[i] = lca[i];
+            }
+
+            //std::cout &lt;&lt; &quot; lca &quot; &lt;&lt; lca &lt;&lt; std::endl;
+
+            return data;
+        }
+    }
+
+    // read position of MBS (float*)
+    DLL_EXPORT const float* READ_MBS_JOINT_POSITION(int mbs_i, int joint_id) {
+
+        static float data[] = { 9.20f, 2.19f, 11.23f };
+
+        if (mbs_i == 0) {
+            gVec3 trn = mbs_src-&gt;link(joint_id)-&gt;frame().trn();
+            //std::cout &lt;&lt; &quot; hi &quot; &lt;&lt; trn &lt;&lt; std::endl;
+            data[0] = trn.x(); data[1] = trn.y(); data[2] = trn.z();
+        }
+        else if(mbs_i ==1) {
+            gVec3 trn = mbs_tar-&gt;link(joint_id)-&gt;frame().trn();
+            //std::cout &lt;&lt; &quot; hi &quot; &lt;&lt; trn &lt;&lt; std::endl;
+            data[0] = trn.x(); data[1] = trn.y(); data[2] = trn.z();
+        }
+        else if (mbs_i == 2) {
+            gVec3 trn = mbs-&gt;link(joint_id)-&gt;frame().trn();
+            //std::cout &lt;&lt; &quot; hi &quot; &lt;&lt; trn &lt;&lt; std::endl;
+            data[0] = trn.x(); data[1] = trn.y(); data[2] = trn.z();
+        }
+        return data;
+    }
+    DLL_EXPORT const float* READ_MBS_JOINT_WORLD_QUAT(int joint_id) {
+
+        static float data[] = { 9.20f, 2.19f, 11.23f , 25.61f };
+        gQuat quat =  mbs-&gt;link(joint_id)-&gt;frame().rot().inQuat();
+        data[0] = quat.x(); data[1] = quat.y(); data[2] = quat.z(); data[3] = quat.w();
+
+        return data;
+    }
+    DLL_EXPORT const float* READ_MBS_JOINT_LOCAL_QUAT(int joint_id) {
+        static float data[] = { 9.20f, 2.19f, 11.23f , 25.61f };
+        gQuat quat = mbs-&gt;link(joint_id)-&gt;localFrame().rot().inQuat();
+        data[0] = quat.x(); data[1] = quat.y(); data[2] = quat.z(); data[3] = quat.w();
+
+        return data;
+    }
+
+    // read name of Joint (string)
+    DLL_EXPORT LPCSTR READ_JOINTNAME(int i) {
+
+        LPCSTR joint_name = mbs-&gt;link(i)-&gt;name();
+
+        return joint_name;
+    }
+
+
+
+    /* Retarget CDLL */
+    DLL_EXPORT int LOAD_SRC_TAR_MBS(LPCSTR chaSrcTXTFile, LPCSTR chaTarTXTFile) {
+        MBSLoader tar_loader;
+        mbs_src = new gMultibodySystem();
+        tar_loader.loadModelUnity(chaSrcTXTFile, mbs_src, 1.0);
+        for (int j = 0; j &lt; mbs_src-&gt;numLinks(); j++) {
+            std::cout &lt;&lt; &quot; joint &quot; &lt;&lt; mbs_src-&gt;link(j)-&gt;name() &lt;&lt; &quot; world position &quot; &lt;&lt; mbs_src-&gt;link(j)-&gt;frame().trn() &lt;&lt;
+                &quot; x &quot; &lt;&lt; mbs_src-&gt;link(j)-&gt;frame().rotX() &lt;&lt; &quot; y &quot; &lt;&lt; mbs_src-&gt;link(j)-&gt;frame().rotY() &lt;&lt; &quot; z &quot; &lt;&lt; mbs_src-&gt;link(j)-&gt;frame().rotZ() &lt;&lt; std::endl;
+        }
+        mbs_tar = new gMultibodySystem();
+        tar_loader.loadModelUnity(chaTarTXTFile, mbs_tar, 1.0);
+        for (int j = 0; j &lt; mbs_tar-&gt;numLinks(); j++)
+            std::cout &lt;&lt; &quot; joint &quot; &lt;&lt; mbs_tar-&gt;link(j)-&gt;name() &lt;&lt; &quot; world position &quot; &lt;&lt; mbs_tar-&gt;link(j)-&gt;frame().trn() &lt;&lt;
+            &quot; x &quot; &lt;&lt; mbs_tar-&gt;link(j)-&gt;frame().rotX() &lt;&lt; &quot; y &quot; &lt;&lt; mbs_tar-&gt;link(j)-&gt;frame().rotY() &lt;&lt; &quot; z &quot; &lt;&lt; mbs_tar-&gt;link(j)-&gt;frame().rotZ() &lt;&lt; std::endl;
+
+
+        //  std::cout &lt;&lt; &quot; joint &quot; &lt;&lt; src-&gt;link(j)-&gt;name() &lt;&lt; &quot; x &quot; &lt;&lt; src-&gt;link(j)-&gt;frame().rotX() &lt;&lt; &quot; y &quot; &lt;&lt;
+        //  src-&gt;link(j)-&gt;frame().rotY() &lt;&lt; &quot; z &quot; &lt;&lt; src-&gt;link(j)-&gt;frame().rotZ() &lt;&lt; std::endl;
+        return mbs_src-&gt;numLinks();
+    }
+    DLL_EXPORT int INIT_RETARGET() {
+
+        //tarQuaternions = arma::mat(mbs_tar-&gt;sizeSafeCoordArray(), Frames, arma::fill::zeros);
+
+        g_poseTrans_Avatar = new mgPoseIKSolver(mbs_src, mbs_tar);
+        g_poseTrans_Avatar-&gt;scale = mbs_tar-&gt;link(0)-&gt;frame().trn().y() / mbs_src-&gt;link(0)-&gt;frame().trn().y();//1.0;
+        std::cout &lt;&lt; &quot; scale &quot; &lt;&lt; g_poseTrans_Avatar-&gt;scale &lt;&lt; std::endl;
+        return g_poseTrans_Avatar-&gt;tar-&gt;numLinks();
+    }
+    DLL_EXPORT int LOAD_SRC_MOTION(LPCSTR srcfilename, float src_scale) {
+        std::cout &lt;&lt; &quot;|--- load src motion file ---|&quot; &lt;&lt; std::endl;
+        // get src motion file
+        MotionLoader loader;
+        loader.setTranslateScale(src_scale);
+        loader.loadMotionFile(srcfilename);
+        mgData* motion = loader.getMotion();
+        mgSkeleton* skeleton = loader.getSkeleton();
+        srcFrameTime = motion-&gt;frameTime;
+
+        std::cout &lt;&lt; &quot;|--- load src motion file ---|&quot; &lt;&lt; std::endl;
+        // load src motion (pose sequence) : nMotion is a total number of frame for motion data
+        arma::mat refCoord(mbs_src-&gt;sizeCompactCoordArray(), motion-&gt;nMotion, arma::fill::zeros);
+        for (int f = 0; f &lt; motion-&gt;nMotion; f++)
+        {
+            arma::vec coord;
+
+            mgMBSUtil::getCoordArrayFromRawData(
+                coord,
+                mbs_src,
+                skeleton,
+                motion-&gt;motions[f]
+            );
+
+            //refCoord.col(f) = coord;
+            refCoord.submat(0, f, arma::SizeMat(coord.n_elem, 1)) = coord;
+        }
+        g_refCoord = refCoord;
+        std::cout &lt;&lt; &quot; rows: &quot; &lt;&lt; g_refCoord.n_rows &lt;&lt; &quot; cols: &quot; &lt;&lt; g_refCoord.n_cols &lt;&lt; std::endl;
+
+        return g_refCoord.n_cols;
+    }
+    DLL_EXPORT int READ_TOTALFRAMES() {
+        return g_refCoord.n_cols;
+    }
+    DLL_EXPORT float READ_FrameTime() {
+        return srcFrameTime;
+    }
+
+    /* Mapping Joints */
+    DLL_EXPORT void INIT_MAPPING_fromTXT(char* txtfile) {
+
+
+        std::ifstream inFile(txtfile);
+
+        if (!inFile) {
+            std::cerr &lt;&lt; &quot;unable to open file &quot; &lt;&lt; std::endl;
+            exit(1);
+        }
+
+        int numLines = 0;
+        std::string line;
+        std::vector&lt;float&gt; ee_ind;
+
+        while (getline(inFile, line)) {
+
+            std::stringstream ss(line);
+
+            std::vector&lt;std::string&gt; data;
+            std::string element;
+            while (ss &gt;&gt; element) {
+                data.push_back(element);
+            }
+            //
+            float ind = std::stof(data[0]);
+            ee_ind.push_back(ind);
+
+            // Create an output string stream
+            std::ostringstream oss;
+
+            // Write the string and float to the output stream
+            oss &lt;&lt; &quot;j&quot; &lt;&lt; numLines;
+
+            // Get the resulting string from the output stream
+            std::string result = oss.str();
+            const char* charPtr = result.c_str();
+            // Allocate a buffer for the char* string
+            char* buffer = new char[result.length() + 1];
+            std::strcpy(buffer, charPtr);
+
+            //std::cout &lt;&lt; &quot; buffer &quot; &lt;&lt; buffer &lt;&lt; std::endl;
+            //chain
+            //SetJntRotDirOBJ(g_poseTrans_Avatar, buffer, (char*)data[1].c_str(), (char*)data[2].c_str());
+
+            if (ind == 1) {
+                gVec3 srcX(std::stof(data[3]), std::stof(data[4]), std::stof(data[5]));
+                gVec3 tarX(std::stof(data[6]), std::stof(data[7]), std::stof(data[8]));
+
+                gVec3 srcY(std::stof(data[9]), std::stof(data[10]), std::stof(data[11]));
+                gVec3 tarY(std::stof(data[12]), std::stof(data[13]), std::stof(data[14]));
+
+                gVec3 srcZ(std::stof(data[15]), std::stof(data[16]), std::stof(data[17]));
+                gVec3 tarZ(std::stof(data[18]), std::stof(data[19]), std::stof(data[20]));
+
+
+                SetJntRotDirOBJ(g_poseTrans_Avatar, buffer, (char*)data[1].c_str(), srcX, srcZ, srcY, (char*)data[2].c_str(), tarX, tarZ, tarY);
+            }
+            else{
+                SetJntRotDirOBJ(g_poseTrans_Avatar, buffer, (char*)data[1].c_str(), (char*)data[2].c_str());
+            }
+
+            numLines++;
+        }
+
+
+        for (int i = 0; i &lt; ee_ind.size() - 1; i++) {
+            // Create an output string stream
+            std::ostringstream oss;
+
+            // Write the string and float to the output stream
+            oss &lt;&lt; &quot;j&quot; &lt;&lt; i;
+
+            std::ostringstream oss2;
+            // Write the string and float to the output stream
+            oss2 &lt;&lt; &quot;j&quot; &lt;&lt; i + 1;
+
+            if (ee_ind[i] != 1) {
+                g_poseTrans_Avatar-&gt;addDirectionObjective(oss.str().c_str(), oss2.str().c_str(), 1.0);
+            }
+        }
+
+        //pelvis position
+        g_poseTrans_Avatar-&gt;addDesiredObjective(&quot;j0&quot;, 10.0, gVec3(0, 0, 0));
+
+
+        // Close the file
+        inFile.close();
+
+    }
+
+    DLL_EXPORT int MAPPING_JOINTS(const char* mapped_name, const char* src_name, const char* tar_name) {
+
+        //g_poseTrans_Avatar-&gt;addPoint(mapped_name, *g_poseTrans_Avatar-&gt;src-&gt;findLink(src_name), gVec3(0, 0, 0), *g_poseTrans_Avatar-&gt;tar-&gt;findLink(tar_name), gVec3(0, 0, 0));
+        SetJntRotDirOBJ(g_poseTrans_Avatar, (char*)mapped_name, (char*)src_name, (char*)tar_name);
+        //std::cout &lt;&lt; (char*)src_name &lt;&lt; (char*)tar_name &lt;&lt; &quot; tarpoints &quot; &lt;&lt; g_poseTrans_Avatar-&gt;tarPoints[0].body() &lt;&lt; std::endl;
+        //std::cout&lt;&lt;&quot; tarpoints &quot; &lt;&lt; g_poseTrans_Avatar-&gt;tarPoints[0].body() &lt;&lt; std::endl;
+        //g_poseTrans_Avatar-&gt;tarPoints[0].updateKinematicsUptoPos();
+        return g_poseTrans_Avatar-&gt;tarPoints.size();
+    }
+    DLL_EXPORT int MAPPING_JOINTS_withAXIS(const char* mapped_name, const char* src_name, const char* tar_name,
+        gVec3 g_src_X, gVec3 g_src_Y, gVec3 g_src_Z,
+        gVec3 g_tar_X, gVec3 g_tar_Y, gVec3 g_tar_Z) {
+
+        //g_poseTrans_Avatar-&gt;addPoint(mapped_name, *g_poseTrans_Avatar-&gt;src-&gt;findLink(src_name), gVec3(0, 0, 0), *g_poseTrans_Avatar-&gt;tar-&gt;findLink(tar_name), gVec3(0, 0, 0));
+        //SetJntRotDirOBJ(g_poseTrans_Avatar, (char*)mapped_name, (char*)src_name, (char*)tar_name);
+        gVec3 src_x = mbs_src-&gt;findLink((char*)src_name)-&gt;frame().rotX();
+        gVec3 src_y = mbs_src-&gt;findLink((char*)src_name)-&gt;frame().rotY();
+        gVec3 src_z = mbs_src-&gt;findLink((char*)src_name)-&gt;frame().rotZ();
+
+        //std::cout &lt;&lt; (char*)src_name &lt;&lt; (char*)tar_name &lt;&lt; &quot; src_x &quot; &lt;&lt;  src_x &lt;&lt; &quot; tar rot x &quot; &lt;&lt; mat_tar.rotX() &lt;&lt; &quot; tar_x&quot; &lt;&lt; mat_tar.invMultVec3(src_x) &lt;&lt; std::endl;
+        //std::cout &lt;&lt; (char*)src_name &lt;&lt; (char*)tar_name &lt;&lt; &quot; src_y &quot; &lt;&lt; src_y &lt;&lt; mat_tar.invMultVec3(src_y) &lt;&lt; std::endl;
+        //std::cout &lt;&lt; (char*)src_name &lt;&lt; (char*)tar_name &lt;&lt; &quot; src_z &quot; &lt;&lt; src_z &lt;&lt; mat_tar.invMultVec3(src_z) &lt;&lt; std::endl;
+
+        SetJntRotDirOBJ(g_poseTrans_Avatar, (char*)mapped_name,
+            (char*)src_name, g_src_X, g_src_Z, g_src_Y,
+            (char*)tar_name, g_tar_X, g_tar_Z, g_tar_Y);
+
+        //std::cout &lt;&lt; (char*)src_name &lt;&lt; (char*)tar_name &lt;&lt; &quot; tarpoints &quot; &lt;&lt; g_poseTrans_Avatar-&gt;tarPoints[0].body() &lt;&lt; std::endl;
+        //std::cout&lt;&lt;&quot; tarpoints &quot; &lt;&lt; g_poseTrans_Avatar-&gt;tarPoints[0].body() &lt;&lt; std::endl;
+        //g_poseTrans_Avatar-&gt;tarPoints[0].updateKinematicsUptoPos();
+        return g_poseTrans_Avatar-&gt;tarPoints.size();
+    }
+    DLL_EXPORT int MAPPING_DIRS(const char* j_start, const char* j_to, float weightDir) {
+        //direction objectives
+        g_poseTrans_Avatar-&gt;addDirectionObjective(j_start, j_to, weightDir);
+        std::cout &lt;&lt; &quot; directions &quot; &lt;&lt; g_poseTrans_Avatar-&gt;directions.size() &lt;&lt; &quot; WEIGHT &quot; &lt;&lt; weightDir &lt;&lt; &quot; &quot; &lt;&lt; j_start &lt;&lt; j_to &lt;&lt; g_poseTrans_Avatar-&gt;namePoints[0] &lt;&lt; std::endl;
+        return 1;
+    }
+    DLL_EXPORT int MAPPING_POS(const char* j_to, float weightPos) {
+        //pelvis position
+        g_poseTrans_Avatar-&gt;addDesiredObjective(j_to, weightPos, gVec3(0, 0, 0));
+        return 1;
+    }
+
+    /* Retargeting Using C++ LEVMAR */
+    DLL_EXPORT void DO_RETARGET_OUTPUT(float x_offset, float y_offset, float z_offset) {
+        //
+        g_poseTrans_Avatar-&gt;src-&gt;updateKinematicsUptoPos();
+
+        // desired positions update
+        for (int p = 0; p &lt; g_poseTrans_Avatar-&gt;srcPoints.size(); p++) {
+
+            g_poseTrans_Avatar-&gt;tarPoints[p].updateKinematicsUptoPos();
+            g_poseTrans_Avatar-&gt;srcPoints[p].updateKinematicsUptoPos();
+
+        }
+
+        //motion retargeting
+        g_poseTrans_Avatar-&gt;desiredPoints[0].pos_desired = g_poseTrans_Avatar-&gt;scale * g_poseTrans_Avatar-&gt;src-&gt;link(0)-&gt;frame().trn(); //g_poseTrans-&gt;scale
+
+        //std::cout &lt;&lt; &quot; let's retarget &quot; &lt;&lt; std::endl;
+        gXMat offset; offset.setTrn(0, 0, 0);
+        g_poseTrans_Avatar-&gt;transferPoseLevMar(offset);
+        g_poseTrans_Avatar-&gt;tar-&gt;updateKinematicsUptoPos();
+
+        gVec3 new_pelvis = g_poseTrans_Avatar-&gt;tar-&gt;link(0)-&gt;frame().trn();
+        new_pelvis.setX(new_pelvis.x() + x_offset);
+        new_pelvis.setY(new_pelvis.y() + y_offset);
+        new_pelvis.setZ(new_pelvis.z() + z_offset);
+        g_poseTrans_Avatar-&gt;tar-&gt;setBasePosition(new_pelvis);
+        g_poseTrans_Avatar-&gt;tar-&gt;updateKinematicsUptoPos();
+
+    }
+
+
+    /* Retargeting Functions */
+    DLL_EXPORT void UPDATE_SRC_POINTS() {
+        for (int i = 0; i &lt; g_poseTrans_Avatar-&gt;srcPoints.size(); ++i) {
+            g_poseTrans_Avatar-&gt;srcPoints[i].updateKinematicsUptoPos();
+        }
+    }
+    DLL_EXPORT const float* READ_SRC_POINTS(int joint_id) {
+
+        static float data[] = { 9.20f, 2.19f, 11.23f };
+
+        gVec3 trn = g_poseTrans_Avatar-&gt;srcPoints[joint_id].posWorld();
+        //std::cout &lt;&lt; &quot; hi &quot; &lt;&lt; trn &lt;&lt; std::endl;
+        data[0] = trn.x(); data[1] = trn.y(); data[2] = trn.z();
+
+        return data;
+    }
+    DLL_EXPORT void UPDATE_TAR_POINTS() {
+        for (int i = 0; i &lt; g_poseTrans_Avatar-&gt;tarPoints.size(); ++i) {
+            g_poseTrans_Avatar-&gt;tarPoints[i].updateKinematicsUptoPos();
+        }
+    }
+    DLL_EXPORT const float* READ_TAR_POINTS(int joint_id) {
+
+        static float data[] = { 9.20f, 2.19f, 11.23f };
+
+        gVec3 trn = g_poseTrans_Avatar-&gt;tarPoints[joint_id].posWorld();
+        //std::cout &lt;&lt; &quot; hi &quot; &lt;&lt; trn &lt;&lt; std::endl;
+        data[0] = trn.x(); data[1] = trn.y(); data[2] = trn.z();
+
+        return data;
+    }
+    DLL_EXPORT void SRC_STORECOORD() {
+        mbs_src-&gt;storeCoord();
+    }
+    DLL_EXPORT void SRC_RESTORECOORD() {
+        mbs_src-&gt;restoreCoord();
+    }
+    DLL_EXPORT void SET_DESIRED_BASE(float* base) {
+        g_poseTrans_Avatar-&gt;desiredPoints[0].pos_desired = g_poseTrans_Avatar-&gt;scale * g_poseTrans_Avatar-&gt;src-&gt;link(0)-&gt;frame().trn(); //g_poseTrans-&gt;scale
+    }
+    DLL_EXPORT int READ_DIRECTION_SIZE() {
+        return g_poseTrans_Avatar-&gt;directions.size();
+    }
+    DLL_EXPORT void GET_DIRECTIONS(int i, int* idx0, int* idx1) {
+        *idx0 = g_poseTrans_Avatar-&gt;directions[i].idx0;
+        *idx1 = g_poseTrans_Avatar-&gt;directions[i].idx1;
+    }
+    DLL_EXPORT const float* MEASURE_DIRECTION(int idx0, int idx1) {
+        gVec3 dirSrc = g_poseTrans_Avatar-&gt;srcPoints[idx1].posWorld() - g_poseTrans_Avatar-&gt;srcPoints[idx0].posWorld();
+        gVec3 dirTar = g_poseTrans_Avatar-&gt;tarPoints[idx1].posWorld() - g_poseTrans_Avatar-&gt;tarPoints[idx0].posWorld();
+        dirSrc.normalize();
+        dirTar.normalize();
+        gVec3 del = dirSrc - dirTar;
+
+        static float data[] = { 9.20f, 2.19f, 11.23f };
+        data[0] = del.x(); data[1] = del.y(); data[2] = del.z();
+
+        return data;
+    }
+    DLL_EXPORT const float* MEASURE_POSITION(int idx0, float* desPoints)
+    {
+        gVec3 posTar = g_poseTrans_Avatar-&gt;tarPoints[idx0].posWorld();
+        gVec3 del = posTar - gVec3(desPoints[0],desPoints[1],desPoints[2]);
+
+        static float data[] = { 9.20f, 2.19f, 11.23f };
+        data[0] = del.x(); data[1] = del.y(); data[2] = del.z();
+
+        return data;
+    }
+
+    /* Desired IK Using C++ LEVMAR */
+
+    // load input MBS Data
+    DLL_EXPORT int LOAD_MBS(LPCSTR chaSrcTXTFile) {
+        MBSLoader tar_loader;
+        mbs = new gMultibodySystem();
+        tar_loader.loadModelUnity(chaSrcTXTFile, mbs, 1.0);
+        for (int j = 0; j &lt; mbs-&gt;numLinks(); j++)
+            std::cout &lt;&lt; mbs-&gt;link(j)-&gt;name() &lt;&lt; mbs-&gt;link(j)-&gt;frame().trn() &lt;&lt;std::endl;
+        //  std::cout &lt;&lt; &quot; joint &quot; &lt;&lt; src-&gt;link(j)-&gt;name() &lt;&lt; &quot; x &quot; &lt;&lt; src-&gt;link(j)-&gt;frame().rotX() &lt;&lt; &quot; y &quot; &lt;&lt;
+        //  src-&gt;link(j)-&gt;frame().rotY() &lt;&lt; &quot; z &quot; &lt;&lt; src-&gt;link(j)-&gt;frame().rotZ() &lt;&lt; std::endl;
+        return mbs-&gt;numLinks();
+    }
+
+    DLL_EXPORT void DO_POSE_IK() {
+        //
+        gXMat offset;
+        mbs-&gt;updateKinematicsUptoPos();
+        g_poseTrans_Avatar-&gt;DesiredLevMar(offset);
+
+        arma::vec lca(mbs-&gt;dof());
+        mbs-&gt;getCompactCoordArray(lca);
+        mbs-&gt;setFromCompactCoordArray(lca);
+        mbs-&gt;updateKinematicsUptoPos();
+
+        /*for (int j = 0; j &lt; mbs-&gt;numLinks(); j++)
+            std::cout &lt;&lt; mbs-&gt;link(j)-&gt;name() &lt;&lt; mbs-&gt;link(j)-&gt;frame().trn() &lt;&lt; std::endl;*/
+
+        g_poseTrans_Avatar-&gt;tar-&gt;updateKinematicsUptoPos();
+    }
+
+    DLL_EXPORT int INIT_IK() {
+
+        g_poseTrans_Avatar = new mgPoseIKSolver(mbs, mbs);
+
+        return mbs-&gt;numLinks();
+    }
+
+    DLL_EXPORT LPCSTR INIT_JOINT_LIST(int i) {
+
+        LPCSTR joint_name = mbs-&gt;link(i)-&gt;name();
+
+        return joint_name;
+    }
+    DLL_EXPORT int SETUP_DES_DIR_JOINTS(LPCSTR mapped_name, LPCSTR joint_name) {
+        g_poseTrans_Avatar-&gt;addDesiredJoint(mapped_name, *mbs-&gt;findLink(joint_name), gVec3(0, 0, 0));
+
+        return g_poseTrans_Avatar-&gt;tarPoints.size();
+    }
+    DLL_EXPORT int SETTING_DESDIRJOINTS(LPCSTR mapped_name, LPCSTR src_name) {
+
+        g_poseTrans_Avatar-&gt;addDesiredJointPoseDir(mapped_name, *mbs-&gt;findLink(src_name), gVec3(0, 0, 0),
+            *mbs-&gt;findLink(src_name)-&gt;parent(), gVec3(0, 0, 0));
+
+        return g_poseTrans_Avatar-&gt;tarPoints.size();
+    }
+    DLL_EXPORT int ADD_DESIRED_POINTS(LPCSTR mapped_name, float* desireds, float weight_pos) {
+
+        gVec3 point;
+        point.setX(-1 * desireds[0]);
+        point.setY(desireds[1]);
+        point.setZ(desireds[2]);
+
+        g_poseTrans_Avatar-&gt;addDesiredObjective(mapped_name, weight_pos, point);
+
+        return g_poseTrans_Avatar-&gt;desiredPoints.size();
+
+    }
+    DLL_EXPORT int ADD_DESIRED_DIR(LPCSTR mapped_name, float* desireds_dir, float weight_dir) {
+
+        gVec3 direction;
+        direction.setX(-1 * desireds_dir[0]);
+        direction.setY(desireds_dir[1]);
+        direction.setZ(desireds_dir[2]);
+
+        g_poseTrans_Avatar-&gt;addDesiredDirObjective(mapped_name, weight_dir, direction);
+
+        return g_poseTrans_Avatar-&gt;desiredDirs.size();
+    }
+    DLL_EXPORT int SET_DESIRED_POINTS(int i, float* desireds, float weight_pos) {
+
+        gVec3 pos;
+        pos.setX(-1 * desireds[0]);
+        pos.setY(desireds[1]);
+        pos.setZ(desireds[2]);
+
+        g_poseTrans_Avatar-&gt;desiredPoints[i].pos_desired = pos;
+        g_poseTrans_Avatar-&gt;desiredPoints[i].weight = weight_pos;
+
+        return g_poseTrans_Avatar-&gt;desiredPoints.size();
+    }
+    DLL_EXPORT int SET_DESIRED_DIRS(int i, float* des_dir, float weight_dir) {
+
+        gVec3 dir; 
+        dir.setX(-1 * des_dir[0]);
+        dir.setY(des_dir[1]);
+        dir.setZ(des_dir[2]);
+
+        //std::cout &lt;&lt; &quot; desiredDirs &quot; &lt;&lt; g_poseTrans_Avatar-&gt;desiredDirs.size() &lt;&lt; std::endl;
+        g_poseTrans_Avatar-&gt;desiredDirs[i].dir_desired = dir;
+        g_poseTrans_Avatar-&gt;desiredDirs[i].weight_dir = weight_dir;
+
+        return g_poseTrans_Avatar-&gt;desiredDirs.size();
+    }
+
+    /* Motion Data */
+    DLL_EXPORT int INIT_DATA(int mbs_i, int Frames) {
+        if (mbs_i == 0) {
+            tarQuaternions = arma::mat(mbs_src-&gt;sizeSafeCoordArray(), Frames, arma::fill::zeros);
+        }
+        else if (mbs_i == 1) {
+            tarQuaternions = arma::mat(mbs_tar-&gt;sizeSafeCoordArray(), Frames, arma::fill::zeros);
+        }
+        else if (mbs_i == 2) {
+            tarQuaternions = arma::mat(mbs-&gt;sizeSafeCoordArray(), Frames, arma::fill::zeros);
+        }
+        std::cout &lt;&lt; &quot; Frames &quot; &lt;&lt; Frames &lt;&lt; &quot; DoF(quat) &quot; &lt;&lt; tarQuaternions.n_rows &lt;&lt; std::endl;
+        return tarQuaternions.n_cols;
+    }
+    DLL_EXPORT void UPDATE_POSE_fromData(int mbs_i, int iter) {
+        //std::cout &lt;&lt; &quot; total frames &quot; &lt;&lt; g_refCoord.n_cols &lt;&lt; std::endl;
+        //for (int k = 0; k &lt; 6; k++)
+        //  std::cout &lt;&lt; &quot; hi &quot; &lt;&lt; g_refCoord.col(iter)[k] &lt;&lt; std::endl;
+
+        arma::vec pose = g_refCoord.col(iter);
+        if (mbs_i == 0) {
+            mbs_src-&gt;setFromCompactCoordArray(pose);
+            mbs_src-&gt;updateKinematicsUptoPos();
+        }
+        else if(mbs_i == 1) {
+            mbs_tar-&gt;setFromCompactCoordArray(pose);
+            mbs_tar-&gt;updateKinematicsUptoPos();
+        }
+        else if (mbs_i == 2) {
+            mbs-&gt;setFromCompactCoordArray(pose);
+            mbs-&gt;updateKinematicsUptoPos();
+        }
+    }
+    DLL_EXPORT void UPDATE_JOINTVEC(int mbs_i, int iter) {
+        if(mbs_i == 0){
+            arma::vec Quat_pose(mbs_src-&gt;numLinks()*4 + 3);
+            mbs_src-&gt;getSafeCoordArray(Quat_pose);
+            tarQuaternions.submat(0, iter, Quat_pose.n_elem - 1, iter) = Quat_pose;
+            //tarQuaternions(0, iter, arma::SizeMat(Quat_pose.n_elem, 1)) = Quat_pose;
+        }
+        else if (mbs_i == 1) {
+            arma::vec Quat_pose(mbs_tar-&gt;numLinks() * 4 + 3);
+            mbs_tar-&gt;getSafeCoordArray(Quat_pose);
+            tarQuaternions.submat(0, iter, Quat_pose.n_elem - 1, iter) = Quat_pose;
+        }
+        else if (mbs_i == 2) {
+            arma::vec Quat_pose(mbs-&gt;numLinks() * 4 + 3);
+            mbs-&gt;getSafeCoordArray(Quat_pose);
+            tarQuaternions.submat(0, iter, Quat_pose.n_elem - 1, iter) = Quat_pose;
+        }
+
+    }
+
+    /* Export Data */
+    DLL_EXPORT void SAVE_BVH(LPCSTR bvh_file_path, int mbs_i, float frametime, float scale) {
+        if(mbs_i == 0)
+            g_saveBVH-&gt;saveBVHFile(mbs_src, bvh_file_path, tarQuaternions, mgBone::_AXISORDER::ZYX, frametime, scale);
+        if (mbs_i == 1)
+            g_saveBVH-&gt;saveBVHFile(mbs_tar, bvh_file_path, tarQuaternions, mgBone::_AXISORDER::ZYX, frametime, scale);
+        if (mbs_i == 2)
+            g_saveBVH-&gt;saveBVHFile(mbs, bvh_file_path, tarQuaternions, mgBone::_AXISORDER::ZYX, frametime, scale);
+    }
+
+    /* Unity MBS */
+    DLL_EXPORT void UPDATE_BASE_POSITION_UnitytoMW(int mbs_i, float* input_pos) {
+
+        gVec3 position(-1.0 * input_pos[0], input_pos[1], input_pos[2]);
+
+
+        if (mbs_i == 0) {
+            mbs_src-&gt;setBasePosition(position);
+            mbs_src-&gt;updateKinematicsUptoPos();
+        }
+        else if (mbs_i == 1) {
+            mbs_tar-&gt;setBasePosition(position);
+            mbs_tar-&gt;updateKinematicsUptoPos();
+        }
+        else if (mbs_i == 2) {
+            mbs-&gt;setBasePosition(position);
+            mbs-&gt;updateKinematicsUptoPos();
+        }
+
+    }
+
+    DLL_EXPORT void UPDATE_JOINT_QUATERNION_UnitytoMW(int mbs_i, int jointidx, float* input_Quat) {
+        gQuat quat; quat.set(input_Quat[0], input_Quat[1], input_Quat[2], input_Quat[3]);
+        gRotMat rot_LeftHanded = quat.inRotMatrix();
+        gRotMat rot_RightHanded;
+        double* convert_L2R = new double[9];
+        convert_L2R[0] = rot_LeftHanded.e(0);    convert_L2R[3] = -1 * rot_LeftHanded.e(3); convert_L2R[6] = -1 * rot_LeftHanded.e(6);
+        convert_L2R[1] = -1 * rot_LeftHanded.e(1); convert_L2R[4] = rot_LeftHanded.e(4);    convert_L2R[7] = rot_LeftHanded.e(7);
+        convert_L2R[2] = -1 * rot_LeftHanded.e(2); convert_L2R[5] = rot_LeftHanded.e(5);    convert_L2R[8] = rot_LeftHanded.e(8);
+        rot_RightHanded.set(convert_L2R);
+
+
+        if (mbs_i == 0) {
+            gXMat mat_G = mbs_src-&gt;link(jointidx)-&gt;localFrame();
+            mat_G.setRot(rot_RightHanded);
+
+            mbs_src-&gt;link(jointidx)-&gt;setFromSafeCoordArray(mat_G.rotInQuat().cptr());
+            mbs_src-&gt;updateKinematicsUptoPos();
+        }
+        else if (mbs_i == 1) {
+            gXMat mat_G = mbs_tar-&gt;link(jointidx)-&gt;localFrame();
+            mat_G.setRot(rot_RightHanded);
+
+            mbs_tar-&gt;link(jointidx)-&gt;setFromSafeCoordArray(mat_G.rotInQuat().cptr());
+            mbs_tar-&gt;updateKinematicsUptoPos();
+        }
+        else if (mbs_i == 2) {
+            gXMat mat_G = mbs-&gt;link(jointidx)-&gt;localFrame();
+            mat_G.setRot(rot_RightHanded);
+
+            mbs-&gt;link(jointidx)-&gt;setFromSafeCoordArray(mat_G.rotInQuat().cptr());
+            mbs-&gt;updateKinematicsUptoPos();
+        }
+
+
+
+    }
+
+    DLL_EXPORT void UPDATE_POSE_UnitytoMW(int mbs_i, float* input_Pose) {
+
+
+        if (mbs_i == 0) {
+
+            //std::cout &lt;&lt; &quot; 0 : &quot; &lt;&lt; input_Pose[0] &lt;&lt; &quot; 1 : &quot; &lt;&lt; input_Pose[1] &lt;&lt;&quot; 2 : &quot;&lt;&lt; input_Pose[2] &lt;&lt; std::endl;
+
+            for (int j = 0; j &lt; mbs_src-&gt;numLinks(); j++) {
+
+                if (j == 0) {
+                    // base position
+                    gVec3 position(-1.0 * input_Pose[0], input_Pose[1], input_Pose[2]);
+                    gRotMat rot_righthanded = TranseRotUnitytoMW(input_Pose[3 + 4 * j + 0], input_Pose[3 + 4 * j + 1], input_Pose[3 + 4 * j + 2], input_Pose[3 + 4 * j + 3]);
+
+                    gXMat T; T.setTrn(position); T.setRot(rot_righthanded);
+                    mbs_src-&gt;setBasePose(T);
+                }
+                else {
+                    gRotMat rot_righthanded = TranseRotUnitytoMW(input_Pose[3 + 4 * j + 0], input_Pose[3 + 4 * j + 1], input_Pose[3 + 4 * j + 2], input_Pose[3 + 4 * j + 3]);
+                    mbs_src-&gt;link(j)-&gt;setFromSafeCoordArray(rot_righthanded.inQuat().cptr());
+                }
+            }
+            mbs_src-&gt;updateKinematicsUptoPos();
+            gVec3 pos1 = mbs_src-&gt;link(0)-&gt;frame().trn();
+
+        }
+        else if (mbs_i == 1) {
+            for (int j = 0; j &lt; mbs_tar-&gt;numLinks(); j++) {
+
+                if (j == 0) {
+                    // base position
+                    gVec3 position(-1.0 * input_Pose[0], input_Pose[1], input_Pose[2]);
+                    mbs_tar-&gt;setBasePosition(position);
+                }
+
+                // rotation
+                gRotMat rot_righthanded = TranseRotUnitytoMW(input_Pose[3 + 4 * j + 0], input_Pose[3 + 4 * j + 1], input_Pose[3 + 4 * j + 2], input_Pose[3 + 4 * j + 3]);
+                gXMat mat_G = mbs_tar-&gt;link(j)-&gt;localFrame();
+                mat_G.setRot(rot_righthanded);
+
+                mbs_tar-&gt;link(j)-&gt;setFromSafeCoordArray(mat_G.rotInQuat().cptr());
+            }
+            mbs_tar-&gt;updateKinematicsUptoPos();
+
+        }
+        else if (mbs_i == 2) {
+            for (int j = 0; j &lt; mbs-&gt;numLinks(); j++) {
+
+                if (j == 0) {
+                    // base position
+                    gVec3 position(-1.0 * input_Pose[0], input_Pose[1], input_Pose[2]);
+                    mbs-&gt;setBasePosition(position);
+                }
+
+                // rotation
+                gRotMat rot_righthanded = TranseRotUnitytoMW(input_Pose[3 + 4 * j + 0], input_Pose[3 + 4 * j + 1], input_Pose[3 + 4 * j + 2], input_Pose[3 + 4 * j + 3]);
+                gXMat mat_G = mbs-&gt;link(j)-&gt;localFrame();
+                mat_G.setRot(rot_righthanded);
+
+                mbs-&gt;link(j)-&gt;setFromSafeCoordArray(mat_G.rotInQuat().cptr());
+            }
+            mbs-&gt;updateKinematicsUptoPos();
+
+        }
+
+    }
+
+    DLL_EXPORT void OUTPUT_JOINT_POSE_UNITY(int mbs_i, float* output_POSE) {
+
+        if (mbs_i == 0) {
+            mbs_src-&gt;updateKinematicsUptoPos();
+            //hip world position
+            gVec3 pos = mbs_src-&gt;link(0)-&gt;frame().trn();
+
+            //convert righthand quaternion to lefthand quaternion
+            output_POSE[0] = -1 * pos.x(); output_POSE[1] = pos.y(); output_POSE[2] = pos.z();
+
+            //joints local rotation
+            for (int i = 0; i &lt; mbs_src-&gt;numLinks(); i++) {
+
+                arma::vec Quat(4);
+                mbs_src-&gt;link(i)-&gt;getSafeCoordArray(Quat.memptr());
+
+                gQuat quat_rH = gQuat(Quat[0],Quat[1], Quat[2], Quat[3]);
+                gQuat quat_lH;
+                //convert righthand quaternion to lefthand quaternion
+                quat_lH.setX(quat_rH.x());
+                quat_lH.setY(-1.0 * quat_rH.y());
+                quat_lH.setZ(-1.0 * quat_rH.z());
+                quat_lH.setW(quat_rH.w());
+
+                //convert righthand quaternion to lefthand quaternion
+                output_POSE[3 + 4 * i + 0] = quat_lH.x(); output_POSE[3 + 4 * i + 1] = quat_lH.y(); output_POSE[3 + 4 * i + 2] = quat_lH.z(); output_POSE[3 + 4 * i + 3] = quat_lH.w();
+            }
+        }
+        if (mbs_i == 1) {
+            //output_POSE = (float*)malloc((mbs_tar-&gt;numLinks()*4 + 3) * sizeof(float)); // �������� �迭 �Ҵ�
+
+            mbs_tar-&gt;updateKinematicsUptoPos();
+            //hip world position
+            gVec3 pos = mbs_tar-&gt;link(0)-&gt;frame().trn();
+            //convert righthand quaternion to lefthand quaternion
+            output_POSE[0] = -1 * pos.x(); output_POSE[1] = pos.y(); output_POSE[2] = pos.z();
+            //joints local rotation
+            for (int i = 0; i &lt; mbs_tar-&gt;numLinks(); i++) {
+                arma::vec Quat(4);
+                mbs_tar-&gt;link(i)-&gt;getSafeCoordArray(Quat.memptr());
+
+                //std::cout &lt;&lt; &quot; DLL &quot; &lt;&lt; mbs_tar-&gt;link(i)-&gt;name() &lt;&lt; std::endl;
+                gQuat quat_rH = gQuat(Quat[0], Quat[1], Quat[2], Quat[3]);
+                gQuat quat_lH;
+                //convert righthand quaternion to lefthand quaternion
+                quat_lH.setX(quat_rH.x());
+                quat_lH.setY(-1.0 * quat_rH.y());
+                quat_lH.setZ(-1.0 * quat_rH.z());
+                quat_lH.setW(quat_rH.w());
+
+                //convert righthand quaternion to lefthand quaternion
+                output_POSE[3 + 4 * i + 0] = quat_lH.x(); output_POSE[3 + 4 * i + 1] = quat_lH.y(); output_POSE[3 + 4 * i + 2] = quat_lH.z(); output_POSE[3 + 4 * i + 3] = quat_lH.w();
+            }
+        }
+        if (mbs_i == 2) {
+            mbs-&gt;updateKinematicsUptoPos();
+            //hip world position
+            gVec3 pos = mbs-&gt;link(0)-&gt;frame().trn();
+            //convert righthand quaternion to lefthand quaternion
+            output_POSE[0] = -1 * pos.x(); output_POSE[1] = pos.y(); output_POSE[2] = pos.z();
+            //joints local rotation
+            for (int i = 0; i &lt; mbs-&gt;numLinks(); i++) {
+                arma::vec Quat(4);
+                mbs-&gt;link(i)-&gt;getSafeCoordArray(Quat.memptr());
+
+                //std::cout &lt;&lt; &quot; DLL &quot; &lt;&lt; mbs_tar-&gt;link(i)-&gt;name() &lt;&lt; std::endl;
+                gQuat quat_rH = gQuat(Quat[0], Quat[1], Quat[2], Quat[3]);
+                gQuat quat_lH;
+                //convert righthand quaternion to lefthand quaternion
+                quat_lH.setX(quat_rH.x());
+                quat_lH.setY(-1.0 * quat_rH.y());
+                quat_lH.setZ(-1.0 * quat_rH.z());
+                quat_lH.setW(quat_rH.w());
+
+                //convert righthand quaternion to lefthand quaternion
+                output_POSE[3 + 4 * i + 0] = quat_lH.x(); output_POSE[3 + 4 * i + 1] = quat_lH.y(); output_POSE[3 + 4 * i + 2] = quat_lH.z(); output_POSE[3 + 4 * i + 3] = quat_lH.w();
+            }
+        }
+    }
+
+
+
+
+    DLL_EXPORT void UPDATE_JOINT_QUATERNION_UnitytoMW_usingName(LPCSTR jointname, float* input_Quat) {
+        gQuat quat; quat.set(input_Quat[0], input_Quat[1], input_Quat[2], input_Quat[3]);
+        gRotMat rot_LeftHanded = quat.inRotMatrix();
+        gRotMat rot_RightHanded;
+        double* convert_L2R = new double[9];
+        convert_L2R[0] = rot_LeftHanded.e(0);    convert_L2R[3] = -1 * rot_LeftHanded.e(3); convert_L2R[6] = -1 * rot_LeftHanded.e(6);
+        convert_L2R[1] = -1 * rot_LeftHanded.e(1); convert_L2R[4] = rot_LeftHanded.e(4);    convert_L2R[7] = rot_LeftHanded.e(7);
+        convert_L2R[2] = -1 * rot_LeftHanded.e(2); convert_L2R[5] = rot_LeftHanded.e(5);    convert_L2R[8] = rot_LeftHanded.e(8);
+        rot_RightHanded.set(convert_L2R);
+
+        gXMat mat_G = mbs-&gt;findLink(jointname)-&gt;localFrame();
+        mat_G.setRot(rot_RightHanded);
+
+        mbs-&gt;findLink(jointname)-&gt;setFromSafeCoordArray(mat_G.rotInQuat().cptr());
+        mbs-&gt;updateKinematicsUptoPos();
+
+    }
+
+    DLL_EXPORT void OUTPUT_JOINT_QUATERNION_UNITY(int jointindex, float* output_Quat) {
+
+        mbs-&gt;updateKinematicsUptoPos();
+
+        gRotMat rot_MW = mbs-&gt;link(jointindex)-&gt;localFrame().rot();
+
+        //
+        gQuat quat_rH = rot_MW.inQuat();
+        gQuat quat_lH;
+        //convert righthand quaternion to lefthand quaternion
+        quat_lH.setX(quat_rH.x());
+        quat_lH.setY(-1.0 * quat_rH.y());
+        quat_lH.setZ(-1.0 * quat_rH.z());
+        quat_lH.setW(quat_rH.w());
+
+        output_Quat[0] = quat_lH.x(); output_Quat[1] = quat_lH.y(); output_Quat[2] = quat_lH.z(); output_Quat[3] = quat_lH.w();
+        //
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+}
+
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      
+    
+  </body>
+</html>

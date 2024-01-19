@@ -1,0 +1,391 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classsave_b_v_h" kind="class" language="C++" prot="public">
+    <compoundname>saveBVH</compoundname>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909" prot="public" static="no" strong="no">
+        <type></type>
+        <name>RotSeq</name>
+        <qualifiedname>saveBVH::RotSeq</qualifiedname>
+        <enumvalue id="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a01d65944502fe60ff96f06c1f54417e6" prot="public">
+          <name>zyx</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a2e952216afe9cb0222f5d417808ae786" prot="public">
+          <name>zyz</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909aa42632592461c023ec68ed3056b4e192" prot="public">
+          <name>zxy</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a3bd67ecf807a9d8ba6774ad68277c6e4" prot="public">
+          <name>zxz</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a71aabeff0fccf992d5730a96739c9fbc" prot="public">
+          <name>yxz</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a46beb2fdda3e97412865601053c012b5" prot="public">
+          <name>yxy</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909ad0a334d4f9a6bd0f639748fd133b50f6" prot="public">
+          <name>yzx</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a3ab4ecd88e9943cac4249f9d6ff08f43" prot="public">
+          <name>yzy</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a7a23b8ce2de99becfcacf5cc36254474" prot="public">
+          <name>xyz</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a1c4a88e0ea81c6598bf43c47d288bf7e" prot="public">
+          <name>xyx</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a7aebf6d7fe37f2382974df2842115000" prot="public">
+          <name>xzy</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a86e72438765b08a83efaa27d26982fc3" prot="public">
+          <name>xzx</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/saveBVH.h" line="49" column="1" bodyfile="MBS_CDLL/saveBVH.h" bodystart="49" bodyend="49"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsave_b_v_h_1a64d52e75ad73c691c46deb8bb1a682d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string saveBVH::puttap</definition>
+        <argsstring>(int n)</argsstring>
+        <name>puttap</name>
+        <qualifiedname>saveBVH::puttap</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/saveBVH.h" line="41" column="13" bodyfile="MBS_CDLL/saveBVH.h" bodystart="41" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classsave_b_v_h_1abcadae43fca132784b96f98450166e49" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void saveBVH::twoaxisrot</definition>
+        <argsstring>(double r11, double r12, double r21, double r31, double r32, double res[])</argsstring>
+        <name>twoaxisrot</name>
+        <qualifiedname>saveBVH::twoaxisrot</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>r11</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r12</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r21</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r31</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r32</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>res</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/saveBVH.h" line="68" column="6" bodyfile="MBS_CDLL/saveBVH.h" bodystart="68" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classsave_b_v_h_1aef131491945ba69f165c254bc7582208" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void saveBVH::threeaxisrot</definition>
+        <argsstring>(double r11, double r12, double r21, double r31, double r32, double res[])</argsstring>
+        <name>threeaxisrot</name>
+        <qualifiedname>saveBVH::threeaxisrot</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>r11</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r12</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r21</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r31</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r32</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>res</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/saveBVH.h" line="74" column="6" bodyfile="MBS_CDLL/saveBVH.h" bodystart="74" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classsave_b_v_h_1a89491110858f4c8cd1ce601680e32a3e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void saveBVH::quaternion2Euler</definition>
+        <argsstring>(gQuat q, double res[], RotSeq rotSeq)</argsstring>
+        <name>quaternion2Euler</name>
+        <qualifiedname>saveBVH::quaternion2Euler</qualifiedname>
+        <param>
+          <type>gQuat</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>res</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>RotSeq</type>
+          <declname>rotSeq</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/saveBVH.h" line="88" column="6" bodyfile="MBS_CDLL/saveBVH.h" bodystart="88" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="classsave_b_v_h_1aaaefa76cec848205219f78b3925a3cb4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void saveBVH::savejoint</definition>
+        <argsstring>(FILE *fp, mgBone *bone, int i)</argsstring>
+        <name>savejoint</name>
+        <qualifiedname>saveBVH::savejoint</qualifiedname>
+        <param>
+          <type>FILE *</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>mgBone *</type>
+          <declname>bone</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/saveBVH.h" line="205" column="6" bodyfile="MBS_CDLL/saveBVH.h" bodystart="205" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="classsave_b_v_h_1a4c1bd13a43ed06c97eba1c72fdc28d74" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void saveBVH::savejoint</definition>
+        <argsstring>(FILE *fp, gLink *bone, int i, mgBone::_AXISORDER axisorder, float scale)</argsstring>
+        <name>savejoint</name>
+        <qualifiedname>saveBVH::savejoint</qualifiedname>
+        <param>
+          <type>FILE *</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>gLink *</type>
+          <declname>bone</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>mgBone::_AXISORDER</type>
+          <declname>axisorder</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/saveBVH.h" line="278" column="6" bodyfile="MBS_CDLL/saveBVH.h" bodystart="278" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="function" id="classsave_b_v_h_1aedd3b9d5bc7f0daa72b131cb1f6d8737" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int saveBVH::saveBVHFile</definition>
+        <argsstring>(gMultibodySystem *character, const char *filename, arma::mat Quat_Motion, mgBone::_AXISORDER axisorder, float frametime=1.0f/60.0f, float scale=1.0f)</argsstring>
+        <name>saveBVHFile</name>
+        <qualifiedname>saveBVH::saveBVHFile</qualifiedname>
+        <param>
+          <type>gMultibodySystem *</type>
+          <declname>character</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>arma::mat</type>
+          <declname>Quat_Motion</declname>
+        </param>
+        <param>
+          <type>mgBone::_AXISORDER</type>
+          <declname>axisorder</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>frametime</declname>
+          <defval>1.0f/60.0f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>scale</declname>
+          <defval>1.0f</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/saveBVH.h" line="350" column="5" bodyfile="MBS_CDLL/saveBVH.h" bodystart="350" bodyend="524"/>
+      </memberdef>
+      <memberdef kind="function" id="classsave_b_v_h_1af1a050e714a1d89b9195ba12fbbd5aa6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void saveBVH::saveBVH_start2end</definition>
+        <argsstring>(arma::mat motion, bCharacter *character, int key_start, int key_end, char *filename)</argsstring>
+        <name>saveBVH_start2end</name>
+        <qualifiedname>saveBVH::saveBVH_start2end</qualifiedname>
+        <param>
+          <type>arma::mat</type>
+          <declname>motion</declname>
+        </param>
+        <param>
+          <type>bCharacter *</type>
+          <declname>character</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>key_start</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>key_end</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/saveBVH.h" line="525" column="6" bodyfile="MBS_CDLL/saveBVH.h" bodystart="525" bodyend="544"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MBS_CDLL/saveBVH.h" line="36" column="1" bodyfile="MBS_CDLL/saveBVH.h" bodystart="37" bodyend="545"/>
+    <listofallmembers>
+      <member refid="classsave_b_v_h_1a64d52e75ad73c691c46deb8bb1a682d8" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>puttap</name></member>
+      <member refid="classsave_b_v_h_1a89491110858f4c8cd1ce601680e32a3e" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>quaternion2Euler</name></member>
+      <member refid="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>RotSeq</name></member>
+      <member refid="classsave_b_v_h_1af1a050e714a1d89b9195ba12fbbd5aa6" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>saveBVH_start2end</name></member>
+      <member refid="classsave_b_v_h_1aedd3b9d5bc7f0daa72b131cb1f6d8737" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>saveBVHFile</name></member>
+      <member refid="classsave_b_v_h_1aaaefa76cec848205219f78b3925a3cb4" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>savejoint</name></member>
+      <member refid="classsave_b_v_h_1a4c1bd13a43ed06c97eba1c72fdc28d74" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>savejoint</name></member>
+      <member refid="classsave_b_v_h_1aef131491945ba69f165c254bc7582208" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>threeaxisrot</name></member>
+      <member refid="classsave_b_v_h_1abcadae43fca132784b96f98450166e49" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>twoaxisrot</name></member>
+      <member refid="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a1c4a88e0ea81c6598bf43c47d288bf7e" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>xyx</name></member>
+      <member refid="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a7a23b8ce2de99becfcacf5cc36254474" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>xyz</name></member>
+      <member refid="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a86e72438765b08a83efaa27d26982fc3" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>xzx</name></member>
+      <member refid="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a7aebf6d7fe37f2382974df2842115000" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>xzy</name></member>
+      <member refid="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a46beb2fdda3e97412865601053c012b5" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>yxy</name></member>
+      <member refid="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a71aabeff0fccf992d5730a96739c9fbc" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>yxz</name></member>
+      <member refid="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909ad0a334d4f9a6bd0f639748fd133b50f6" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>yzx</name></member>
+      <member refid="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a3ab4ecd88e9943cac4249f9d6ff08f43" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>yzy</name></member>
+      <member refid="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909aa42632592461c023ec68ed3056b4e192" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>zxy</name></member>
+      <member refid="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a3bd67ecf807a9d8ba6774ad68277c6e4" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>zxz</name></member>
+      <member refid="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a01d65944502fe60ff96f06c1f54417e6" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>zyx</name></member>
+      <member refid="classsave_b_v_h_1ac2eceec71e21fd082be070c9b27dc909a2e952216afe9cb0222f5d417808ae786" prot="public" virt="non-virtual"><scope>saveBVH</scope><name>zyz</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

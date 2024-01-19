@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="save_b_v_h_8cpp" kind="file" language="C++">
+    <compoundname>saveBVH.cpp</compoundname>
+    <includes refid="save_b_v_h_8h" local="yes">saveBVH.h</includes>
+    <incdepgraph>
+      <node id="11">
+        <label>Character/bCharacterLoader.h</label>
+      </node>
+      <node id="1">
+        <label>MBS_CDLL/saveBVH.cpp</label>
+        <link refid="save_b_v_h_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>saveBVH.h</label>
+        <link refid="save_b_v_h_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Loader/MotionLoader.h</label>
+      </node>
+      <node id="13">
+        <label>Loader/mgSkeletonToBCharacter.h</label>
+      </node>
+      <node id="14">
+        <label>MocapProcessor/mgMBSUtil.h</label>
+      </node>
+      <node id="15">
+        <label>MocapProcessor/mgUtility.h</label>
+      </node>
+      <node id="16">
+        <label>Visualizer/gBdOsgSystem.h</label>
+      </node>
+      <node id="18">
+        <label>Visualizer/gOSGShape.h</label>
+      </node>
+      <node id="17">
+        <label>Visualizer/gOSGSkin.h</label>
+      </node>
+      <node id="3">
+        <label>Windows.h</label>
+      </node>
+      <node id="5">
+        <label>algorithm</label>
+      </node>
+      <node id="4">
+        <label>iostream</label>
+      </node>
+      <node id="32">
+        <label>osg/BlendFunc</label>
+      </node>
+      <node id="6">
+        <label>osg/Geode</label>
+      </node>
+      <node id="9">
+        <label>osg/LineWidth</label>
+      </node>
+      <node id="30">
+        <label>osg/TriangleIndexFunctor</label>
+      </node>
+      <node id="21">
+        <label>osgAnimation/Animation</label>
+      </node>
+      <node id="19">
+        <label>osgAnimation/AnimationManagerBase</label>
+      </node>
+      <node id="20">
+        <label>osgAnimation/BasicAnimationManager</label>
+      </node>
+      <node id="23">
+        <label>osgAnimation/Bone</label>
+      </node>
+      <node id="22">
+        <label>osgAnimation/Skeleton</label>
+      </node>
+      <node id="26">
+        <label>osgAnimation/StackedMatrixElement</label>
+      </node>
+      <node id="28">
+        <label>osgAnimation/StackedQuaternionElement</label>
+      </node>
+      <node id="25">
+        <label>osgAnimation/StackedRotateAxisElement</label>
+      </node>
+      <node id="29">
+        <label>osgAnimation/StackedScaleElement</label>
+      </node>
+      <node id="27">
+        <label>osgAnimation/StackedTranslateElement</label>
+      </node>
+      <node id="24">
+        <label>osgAnimation/UpdateBone</label>
+      </node>
+      <node id="31">
+        <label>osgDB/Options</label>
+      </node>
+      <node id="10">
+        <label>osgDB/ReadFile</label>
+      </node>
+      <node id="8">
+        <label>osgGA/TrackballManipulator</label>
+      </node>
+      <node id="7">
+        <label>osgViewer/Viewer</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;saveBVH.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="MBS_CDLL/saveBVH.cpp"/>
+  </compounddef>
+</doxygen>

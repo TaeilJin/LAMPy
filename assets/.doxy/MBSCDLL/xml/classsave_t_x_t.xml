@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classsave_t_x_t" kind="class" language="C++" prot="public">
+    <compoundname>saveTXT</compoundname>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsave_t_x_t_1a464c9c61fd15ecb0b37da9d441c5c8a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string saveTXT::puttap</definition>
+        <argsstring>(int n)</argsstring>
+        <name>puttap</name>
+        <qualifiedname>saveTXT::puttap</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/saveTXT.h" line="41" column="13" bodyfile="MBS_CDLL/saveTXT.h" bodystart="41" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classsave_t_x_t_1a863b0fd3346f7090eb2eed814cfbb9cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void saveTXT::saveVec3</definition>
+        <argsstring>(FILE *fp, gVec3 vec, bool b_enter, char *name)</argsstring>
+        <name>saveVec3</name>
+        <qualifiedname>saveTXT::saveVec3</qualifiedname>
+        <param>
+          <type>FILE *</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>gVec3</type>
+          <declname>vec</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>b_enter</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/saveTXT.h" line="48" column="6" bodyfile="MBS_CDLL/saveTXT.h" bodystart="48" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classsave_t_x_t_1a2b76aa71143d91a68c8f242ca1b82fc2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void saveTXT::saveVec3</definition>
+        <argsstring>(FILE *fp, gVec3 vec, bool b_enter)</argsstring>
+        <name>saveVec3</name>
+        <qualifiedname>saveTXT::saveVec3</qualifiedname>
+        <param>
+          <type>FILE *</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>gVec3</type>
+          <declname>vec</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>b_enter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/saveTXT.h" line="54" column="6" bodyfile="MBS_CDLL/saveTXT.h" bodystart="54" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classsave_t_x_t_1a023fd84367dbee7566b46f2613aba6b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void saveTXT::saveQuat</definition>
+        <argsstring>(FILE *fp, gQuat quat, bool b_enter)</argsstring>
+        <name>saveQuat</name>
+        <qualifiedname>saveTXT::saveQuat</qualifiedname>
+        <param>
+          <type>FILE *</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>gQuat</type>
+          <declname>quat</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>b_enter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/saveTXT.h" line="61" column="6" bodyfile="MBS_CDLL/saveTXT.h" bodystart="61" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classsave_t_x_t_1a534dfa41e4dfe848218fd58211a5b46c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void saveTXT::saveTmat</definition>
+        <argsstring>(FILE *fp, gXMat gmat, char *name)</argsstring>
+        <name>saveTmat</name>
+        <qualifiedname>saveTXT::saveTmat</qualifiedname>
+        <param>
+          <type>FILE *</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>gXMat</type>
+          <declname>gmat</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/saveTXT.h" line="68" column="6" bodyfile="MBS_CDLL/saveTXT.h" bodystart="68" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classsave_t_x_t_1ab5e29322e6118765f324152ec1d4a27f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void saveTXT::saveMotion</definition>
+        <argsstring>(FILE *fp, arma::mat Quat_Motion, int numLinks)</argsstring>
+        <name>saveMotion</name>
+        <qualifiedname>saveTXT::saveMotion</qualifiedname>
+        <param>
+          <type>FILE *</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>arma::mat</type>
+          <declname>Quat_Motion</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numLinks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/saveTXT.h" line="75" column="6" bodyfile="MBS_CDLL/saveTXT.h" bodystart="75" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classsave_t_x_t_1ae6456b4df47a31a48ea4eb340a32cde3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void saveTXT::saveMotionFile</definition>
+        <argsstring>(bCharacter *character, const char *filename, arma::mat Quat_Motion)</argsstring>
+        <name>saveMotionFile</name>
+        <qualifiedname>saveTXT::saveMotionFile</qualifiedname>
+        <param>
+          <type>bCharacter *</type>
+          <declname>character</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>arma::mat</type>
+          <declname>Quat_Motion</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/saveTXT.h" line="119" column="6" bodyfile="MBS_CDLL/saveTXT.h" bodystart="119" bodyend="122"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MBS_CDLL/saveTXT.h" line="36" column="1" bodyfile="MBS_CDLL/saveTXT.h" bodystart="37" bodyend="123"/>
+    <listofallmembers>
+      <member refid="classsave_t_x_t_1a464c9c61fd15ecb0b37da9d441c5c8a5" prot="public" virt="non-virtual"><scope>saveTXT</scope><name>puttap</name></member>
+      <member refid="classsave_t_x_t_1ab5e29322e6118765f324152ec1d4a27f" prot="public" virt="non-virtual"><scope>saveTXT</scope><name>saveMotion</name></member>
+      <member refid="classsave_t_x_t_1ae6456b4df47a31a48ea4eb340a32cde3" prot="public" virt="non-virtual"><scope>saveTXT</scope><name>saveMotionFile</name></member>
+      <member refid="classsave_t_x_t_1a023fd84367dbee7566b46f2613aba6b4" prot="public" virt="non-virtual"><scope>saveTXT</scope><name>saveQuat</name></member>
+      <member refid="classsave_t_x_t_1a534dfa41e4dfe848218fd58211a5b46c" prot="public" virt="non-virtual"><scope>saveTXT</scope><name>saveTmat</name></member>
+      <member refid="classsave_t_x_t_1a863b0fd3346f7090eb2eed814cfbb9cb" prot="public" virt="non-virtual"><scope>saveTXT</scope><name>saveVec3</name></member>
+      <member refid="classsave_t_x_t_1a2b76aa71143d91a68c8f242ca1b82fc2" prot="public" virt="non-virtual"><scope>saveTXT</scope><name>saveVec3</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

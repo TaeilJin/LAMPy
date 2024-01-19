@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structmg_pose_i_k_solver_1_1idx_desired_dir" kind="struct" language="C++" prot="public">
+    <compoundname>mgPoseIKSolver::idxDesiredDir</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmg_pose_i_k_solver_1_1idx_desired_dir_1adc90b08d287a686e5b976c0fb8fc70d7" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mgPoseIKSolver::idxDesiredDir::idx</definition>
+        <argsstring></argsstring>
+        <name>idx</name>
+        <qualifiedname>mgPoseIKSolver::idxDesiredDir::idx</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="41" column="5" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmg_pose_i_k_solver_1_1idx_desired_dir_1a6ef7ddf072bb08e0b5fb61415e761526" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double mgPoseIKSolver::idxDesiredDir::weight_dir</definition>
+        <argsstring></argsstring>
+        <name>weight_dir</name>
+        <qualifiedname>mgPoseIKSolver::idxDesiredDir::weight_dir</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="42" column="8" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmg_pose_i_k_solver_1_1idx_desired_dir_1a4d477251d603c8155980dd1a7f28eab4" prot="public" static="no" mutable="no">
+        <type>gVec3</type>
+        <definition>gVec3 mgPoseIKSolver::idxDesiredDir::dir_desired</definition>
+        <argsstring></argsstring>
+        <name>dir_desired</name>
+        <qualifiedname>mgPoseIKSolver::idxDesiredDir::dir_desired</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="43" column="7" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MBS_CDLL/mgPoseTransfer_IK.h" line="40" column="1" bodyfile="MBS_CDLL/mgPoseTransfer_IK.h" bodystart="40" bodyend="45"/>
+    <listofallmembers>
+      <member refid="structmg_pose_i_k_solver_1_1idx_desired_dir_1a4d477251d603c8155980dd1a7f28eab4" prot="public" virt="non-virtual"><scope>mgPoseIKSolver::idxDesiredDir</scope><name>dir_desired</name></member>
+      <member refid="structmg_pose_i_k_solver_1_1idx_desired_dir_1adc90b08d287a686e5b976c0fb8fc70d7" prot="public" virt="non-virtual"><scope>mgPoseIKSolver::idxDesiredDir</scope><name>idx</name></member>
+      <member refid="structmg_pose_i_k_solver_1_1idx_desired_dir_1a6ef7ddf072bb08e0b5fb61415e761526" prot="public" virt="non-virtual"><scope>mgPoseIKSolver::idxDesiredDir</scope><name>weight_dir</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

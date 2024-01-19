@@ -1,0 +1,1251 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+    
+    
+      
+        <title>File saveBVH.h - LAMPy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#file-savebvhh" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="LAMPy" class="md-header__button md-logo" aria-label="LAMPy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LAMPy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              File saveBVH.h
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="LAMPy" class="md-nav__button md-logo" aria-label="LAMPy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    LAMPy
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MBS Python Manager
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            MBS Python Manager
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MBS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MBS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MBS_IK/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MBS_IK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MBS_retargeting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MBS_Retargeting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MBSCDLL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            MBSCDLL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../links/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Links
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Classes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Classes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../annotated/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hierarchy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Hierarchy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_members/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Members
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_member_functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Member Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_member_variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Member Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_member_typedefs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Member Typedefs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_member_enums/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Member Enumerations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="file-savebvhh">File saveBVH.h</h1>
+<p><a href="../files/"><strong>File List</strong></a> <strong>&gt;</strong> <a href="../dir_ddc84d54b9d1cd5babbd6fb469a13a43/"><strong>MBS_CDLL</strong></a> <strong>&gt;</strong> <a href="../save_b_v_h_8h/"><strong>saveBVH.h</strong></a></p>
+<p><a href="../save_b_v_h_8h/">Go to the documentation of this file</a></p>
+<pre><code class="language-C++">
+#pragma once
+#include &lt;Windows.h&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+
+#include &lt;osg/Geode&gt;
+#include &lt;osgViewer/Viewer&gt;
+#include &lt;osgGA/TrackballManipulator&gt;
+#include &lt;osg/LineWidth&gt;
+#include &lt;osgDB/ReadFile&gt;
+
+#include &quot;Character/bCharacterLoader.h&quot;
+#include &quot;Loader/MotionLoader.h&quot;
+#include &quot;Loader/mgSkeletonToBCharacter.h&quot;
+#include &quot;MocapProcessor/mgMBSUtil.h&quot;
+#include &quot;MocapProcessor/mgUtility.h&quot;
+#include &quot;Visualizer/gBdOsgSystem.h&quot;
+#include &quot;Visualizer/gOSGSkin.h&quot;
+#include &quot;Visualizer/gOSGShape.h&quot;
+
+#include &lt;osgAnimation/AnimationManagerBase&gt;
+#include &lt;osgAnimation/BasicAnimationManager&gt;
+#include &lt;osgAnimation/Animation&gt;
+#include &lt;osgAnimation/Skeleton&gt;
+#include &lt;osgAnimation/Bone&gt;
+#include &lt;osgAnimation/UpdateBone&gt;
+#include &lt;osgAnimation/StackedRotateAxisElement&gt;
+#include &lt;osgAnimation/StackedMatrixElement&gt;
+#include &lt;osgAnimation/StackedTranslateElement&gt;
+#include &lt;osgAnimation/StackedQuaternionElement&gt;
+#include &lt;osgAnimation/StackedScaleElement&gt;
+#include &lt;osg/TriangleIndexFunctor&gt;
+#include &lt;osgDB/Options&gt;
+#include &lt;osg/BlendFunc&gt;
+
+class saveBVH
+{
+
+public:
+
+    std::string puttap(int n) {
+        std::string output;
+        for (int i = 0; i &lt; n; i++) {
+            output += &quot;\t&quot;;
+        }
+        return output;
+    }
+
+    enum RotSeq { zyx, zyz, zxy, zxz, yxz, yxy, yzx, yzy, xyz, xyx, xzy, xzx };
+
+    // Quaternion to Euler
+    /*
+    enum _AXISORDER {
+    XYZ,
+    XZY,
+    YXZ,
+    YZX,
+    ZXY,
+    ZYX,
+    XY, XZ,
+    YX, YZ,
+    ZX, ZY,
+    X, Y, Z
+    };
+    */
+    void twoaxisrot(double r11, double r12, double r21, double r31, double r32, double res[]) {
+        res[0] = atan2(r11, r12);
+        res[1] = acos(r21);
+        res[2] = atan2(r31, r32);
+    }
+
+    void threeaxisrot(double r11, double r12, double r21, double r31, double r32, double res[]) {
+        res[0] = atan2(r31, r32);
+        res[1] = asin(r21);
+        res[2] = atan2(r11, r12);
+    }
+
+    // note: 
+    // return values of res[] depends on rotSeq.
+    // i.e.
+    // for rotSeq zyx, 
+    // x = res[0], y = res[1], z = res[2]
+    // for rotSeq xyz
+    // z = res[0], y = res[1], x = res[2]
+    // ...
+    void quaternion2Euler(gQuat q, double res[], RotSeq rotSeq)
+    {
+        switch (rotSeq) {
+        case zyx:
+            threeaxisrot(
+                2 * (q.x() * q.y() + q.w() * q.z()),
+                q.w() * q.w() + q.x() * q.x() - q.y() * q.y() - q.z() * q.z(),
+                -2 * (q.x() * q.z() - q.w() * q.y()),
+                2 * (q.y() * q.z() + q.w() * q.x()),
+                q.w() * q.w() - q.x() * q.x() - q.y() * q.y() + q.z() * q.z(),
+                res);
+            break;
+
+        case zyz:
+            twoaxisrot(2 * (q.y() * q.z() - q.w() * q.x()),
+                2 * (q.x() * q.z() + q.w() * q.y()),
+                q.w() * q.w() - q.x() * q.x() - q.y() * q.y() + q.z() * q.z(),
+                2 * (q.y() * q.z() + q.w() * q.x()),
+                -2 * (q.x() * q.z() - q.w() * q.y()),
+                res);
+            break;
+
+        case zxy:
+            threeaxisrot(-2 * (q.x() * q.y() - q.w() * q.z()),
+                q.w() * q.w() - q.x() * q.x() + q.y() * q.y() - q.z() * q.z(),
+                2 * (q.y() * q.z() + q.w() * q.x()),
+                -2 * (q.x() * q.z() - q.w() * q.y()),
+                q.w() * q.w() - q.x() * q.x() - q.y() * q.y() + q.z() * q.z(),
+                res);
+            break;
+
+        case zxz:
+            twoaxisrot(2 * (q.x() * q.z() + q.w() * q.y()),
+                -2 * (q.y() * q.z() - q.w() * q.x()),
+                q.w() * q.w() - q.x() * q.x() - q.y() * q.y() + q.z() * q.z(),
+                2 * (q.x() * q.z() - q.w() * q.y()),
+                2 * (q.y() * q.z() + q.w() * q.x()),
+                res);
+            break;
+
+        case yxz:
+            threeaxisrot(2 * (q.x() * q.z() + q.w() * q.y()),
+                q.w() * q.w() - q.x() * q.x() - q.y() * q.y() + q.z() * q.z(),
+                -2 * (q.y() * q.z() - q.w() * q.x()),
+                2 * (q.x() * q.y() + q.w() * q.z()),
+                q.w() * q.w() - q.x() * q.x() + q.y() * q.y() - q.z() * q.z(),
+                res);
+            break;
+
+        case yxy:
+            twoaxisrot(2 * (q.x() * q.y() - q.w() * q.z()),
+                2 * (q.y() * q.z() + q.w() * q.x()),
+                q.w() * q.w() - q.x() * q.x() + q.y() * q.y() - q.z() * q.z(),
+                2 * (q.x() * q.y() + q.w() * q.z()),
+                -2 * (q.y() * q.z() - q.w() * q.x()),
+                res);
+            break;
+
+        case yzx:
+            threeaxisrot(-2 * (q.x() * q.z() - q.w() * q.y()),
+                q.w() * q.w() + q.x() * q.x() - q.y() * q.y() - q.z() * q.z(),
+                2 * (q.x() * q.y() + q.w() * q.z()),
+                -2 * (q.y() * q.z() - q.w() * q.x()),
+                q.w() * q.w() - q.x() * q.x() + q.y() * q.y() - q.z() * q.z(),
+                res);
+            break;
+
+        case yzy:
+            twoaxisrot(2 * (q.y() * q.z() + q.w() * q.x()),
+                -2 * (q.x() * q.y() - q.w() * q.z()),
+                q.w() * q.w() - q.x() * q.x() + q.y() * q.y() - q.z() * q.z(),
+                2 * (q.y() * q.z() - q.w() * q.x()),
+                2 * (q.x() * q.y() + q.w() * q.z()),
+                res);
+            break;
+
+        case xyz:
+            threeaxisrot(-2 * (q.y() * q.z() - q.w() * q.x()),
+                q.w() * q.w() - q.x() * q.x() - q.y() * q.y() + q.z() * q.z(),
+                2 * (q.x() * q.z() + q.w() * q.y()),
+                -2 * (q.x() * q.y() - q.w() * q.z()),
+                q.w() * q.w() + q.x() * q.x() - q.y() * q.y() - q.z() * q.z(),
+                res);
+            break;
+
+        case xyx:
+            twoaxisrot(2 * (q.x() * q.y() + q.w() * q.z()),
+                -2 * (q.x() * q.z() - q.w() * q.y()),
+                q.w() * q.w() + q.x() * q.x() - q.y() * q.y() - q.z() * q.z(),
+                2 * (q.x() * q.y() - q.w() * q.z()),
+                2 * (q.x() * q.z() + q.w() * q.y()),
+                res);
+            break;
+
+        case xzy:
+            threeaxisrot(2 * (q.y() * q.z() + q.w() * q.x()),
+                q.w() * q.w() - q.x() * q.x() + q.y() * q.y() - q.z() * q.z(),
+                -2 * (q.x() * q.y() - q.w() * q.z()),
+                2 * (q.x() * q.z() + q.w() * q.y()),
+                q.w() * q.w() + q.x() * q.x() - q.y() * q.y() - q.z() * q.z(),
+                res);
+            break;
+
+        case xzx:
+            twoaxisrot(2 * (q.x() * q.z() - q.w() * q.y()),
+                2 * (q.x() * q.y() + q.w() * q.z()),
+                q.w() * q.w() + q.x() * q.x() - q.y() * q.y() - q.z() * q.z(),
+                2 * (q.x() * q.z() + q.w() * q.y()),
+                -2 * (q.x() * q.y() - q.w() * q.z()),
+                res);
+            break;
+        default:
+            std::cout &lt;&lt; &quot;Unknown rotation sequence&quot; &lt;&lt; std::endl;
+            break;
+        }
+    }
+
+    void savejoint(FILE* fp, mgBone* bone, int i) {
+        std::string new_t = puttap(i);
+        fprintf(fp, &quot;%sJOINT %s\n&quot;, new_t.c_str(), bone-&gt;name.c_str());
+        fprintf(fp, &quot;%s{\n&quot;, new_t.c_str());
+
+        gVec3 pos = bone-&gt;H.trn();
+        std::cout &lt;&lt; bone-&gt;order &lt;&lt; std::endl;
+        /*
+        enum _AXISORDER {
+            XYZ,
+            XZY,
+            YXZ,
+            YZX,
+            ZXY,
+            ZYX,
+            XY, XZ,
+            YX, YZ,
+            ZX, ZY,
+            X, Y, Z
+        };
+        */
+        new_t = puttap(i + 1); // i+1 times tap (index +1 )  == child tap num
+
+        fprintf(fp, &quot;%sOFFSET %g %g %g\n&quot;, new_t.c_str(), pos.x(), pos.y(), pos.z());
+        const char* Zrotation = &quot;Zrotation&quot;;
+        const char* Yrotation = &quot;Yrotation&quot;;
+        const char* Xrotation = &quot;Xrotation&quot;;
+        if (bone-&gt;order == 0) {
+            fprintf(fp, &quot;%sCHANNELS 3 %s %s %s\n&quot;, new_t.c_str(), Xrotation, Yrotation, Zrotation); // XYZ
+        }
+        else if (bone-&gt;order == 1) {
+            fprintf(fp, &quot;%sCHANNELS 3 %s %s %s\n&quot;, new_t.c_str(), Xrotation, Zrotation, Yrotation); // XZY
+        }
+        else if (bone-&gt;order == 2) {
+            fprintf(fp, &quot;%sCHANNELS 3 %s %s %s\n&quot;, new_t.c_str(), Yrotation, Xrotation, Zrotation); //YXZ
+        }
+        else if (bone-&gt;order == 3) {
+            fprintf(fp, &quot;%sCHANNELS 3 %s %s %s\n&quot;, new_t.c_str(), Yrotation, Zrotation, Xrotation); //YZX
+        }
+        else if (bone-&gt;order == 4) {
+            fprintf(fp, &quot;%sCHANNELS 3 %s %s %s\n&quot;, new_t.c_str(), Zrotation, Xrotation, Yrotation); //ZXY
+        }
+        else if (bone-&gt;order == 5) {
+            fprintf(fp, &quot;%sCHANNELS 3 %s %s %s\n&quot;, new_t.c_str(), Zrotation, Yrotation, Xrotation); //ZYX
+        }
+        else {
+            std::cout &lt;&lt; &quot; rotation order is not 3 dimension! &quot; &lt;&lt; std::endl;
+        }
+        // recursive
+        bool end_site = true;
+
+        for (int j = 0; j &lt; bone-&gt;children.size(); j++) {
+            mgBone* child = bone-&gt;children[j];
+            savejoint(fp, child, i + 1);
+            end_site = false;
+        }
+
+        /*if (end_site == true) {
+            new_t = puttap(i + 1);
+            fprintf(fp, &quot;%sEnd Site\n&quot;, new_t.c_str());
+            fprintf(fp, &quot;%s{\n&quot;, new_t.c_str());
+            new_t = puttap(i + 2);
+            fprintf(fp, &quot;%sOFFSET %g %g %g\n&quot;, new_t.c_str(), 0.0, 0.0, 0.0);
+            new_t = puttap(i + 1);
+            fprintf(fp, &quot;%s}\n&quot;, new_t.c_str());
+        }*/
+
+        new_t = puttap(i);
+        fprintf(fp, &quot;%s}\n&quot;, new_t.c_str());
+
+        //
+    }
+
+    void savejoint(FILE* fp, gLink* bone, int i, mgBone::_AXISORDER axisorder, float scale) {
+        std::string new_t = puttap(i);
+        fprintf(fp, &quot;%sJOINT %s\n&quot;, new_t.c_str(), bone-&gt;name());
+        fprintf(fp, &quot;%s{\n&quot;, new_t.c_str());
+
+        gVec3 pos = bone-&gt;localFrameDefault().trn() * scale;
+
+        /*
+        enum _AXISORDER {
+        XYZ,
+        XZY,
+        YXZ,
+        YZX,
+        ZXY,
+        ZYX,
+        XY, XZ,
+        YX, YZ,
+        ZX, ZY,
+        X, Y, Z
+        };
+        */
+        new_t = puttap(i + 1); // i+1 times tap (index +1 )  == child tap num
+
+        fprintf(fp, &quot;%sOFFSET %g %g %g\n&quot;, new_t.c_str(), pos.x(), pos.y(), pos.z());
+        const char* Zrotation = &quot;Zrotation&quot;;
+        const char* Yrotation = &quot;Yrotation&quot;;
+        const char* Xrotation = &quot;Xrotation&quot;;
+        switch (axisorder) {
+        case mgBone::_AXISORDER::XYZ:
+            fprintf(fp, &quot;%sCHANNELS 3 %s %s %s\n&quot;, new_t.c_str(), Xrotation, Yrotation, Zrotation); // XYZ
+            break;
+        case mgBone::_AXISORDER::XZY:
+            fprintf(fp, &quot;%sCHANNELS 3 %s %s %s\n&quot;, new_t.c_str(), Xrotation, Zrotation, Yrotation); // XZY
+            break;
+        case mgBone::_AXISORDER::YXZ:
+            fprintf(fp, &quot;%sCHANNELS 3 %s %s %s\n&quot;, new_t.c_str(), Yrotation, Xrotation, Zrotation); //YXZ
+            break;
+        case mgBone::_AXISORDER::YZX:
+            fprintf(fp, &quot;%sCHANNELS 3 %s %s %s\n&quot;, new_t.c_str(), Yrotation, Zrotation, Xrotation); //YZX
+            break;
+        case mgBone::_AXISORDER::ZXY:
+            fprintf(fp, &quot;%sCHANNELS 3 %s %s %s\n&quot;, new_t.c_str(), Zrotation, Xrotation, Yrotation); //ZXY
+            break;
+        case mgBone::_AXISORDER::ZYX:
+            fprintf(fp, &quot;%sCHANNELS 3 %s %s %s\n&quot;, new_t.c_str(), Zrotation, Yrotation, Xrotation); //ZYX
+            break;
+        }
+        // recursive
+        bool end_site = true;
+
+        for (int j = 0; j &lt; bone-&gt;numChildren(); j++) {
+            gLink* child = bone-&gt;child(j);
+            savejoint(fp, child, i + 1, axisorder, scale);
+            end_site = false;
+        }
+
+        // sometimes we don't need a end  site
+        /*if (end_site == true) {
+            new_t = puttap(i + 1);
+            fprintf(fp, &quot;%sEnd Site\n&quot;, new_t.c_str());
+            fprintf(fp, &quot;%s{\n&quot;, new_t.c_str());
+            new_t = puttap(i + 2);
+            fprintf(fp, &quot;%sOFFSET %g %g %g\n&quot;, new_t.c_str(), 0.0, 0.0, 0.0);
+            new_t = puttap(i + 1);
+            fprintf(fp, &quot;%s}\n&quot;, new_t.c_str());
+        }*/
+
+        new_t = puttap(i);
+        fprintf(fp, &quot;%s}\n&quot;, new_t.c_str());
+
+        //
+    }
+    int saveBVHFile(gMultibodySystem* character, const char* filename, arma::mat Quat_Motion, mgBone::_AXISORDER axisorder, float frametime = 1.0f / 60.0f, float scale = 1.0f) {
+
+        // character -&gt; hierarchy, Offset -&gt; Hierarchy
+        // rotation order -&gt; Motion
+        FILE* fp = fopen(filename, &quot;w&quot;);
+        if (!fp)
+        {
+            printf(&quot;error: cannot open a file(%s) to write.\n&quot;, filename);
+            return -1;
+        }
+        // Root Bone Hierarchy
+        gLink* rootLink = character-&gt;link(0);
+        //gVec3 pos = rootLink-&gt;localFrameDefault().trn();
+        gVec3 pos = rootLink-&gt;localFrameDefault().trn() * scale;
+
+
+        fprintf(fp, &quot;HIERARCHY\n&quot;);
+        fprintf(fp, &quot;ROOT %s\n&quot;, rootLink-&gt;name());
+        fprintf(fp, &quot;{\n&quot;);
+        //OFFSET
+        std::string t = puttap(1);
+        fprintf(fp, &quot;%sOFFSET %g %g %g \n&quot;, t.c_str(), pos.x(), pos.y(), pos.z());
+        //Channels
+        const char* Zrotation = &quot;Zrotation&quot;;
+        const char* Yrotation = &quot;Yrotation&quot;;
+        const char* Xrotation = &quot;Xrotation&quot;;
+        switch (axisorder) {
+        case (mgBone::_AXISORDER::XYZ):
+            fprintf(fp, &quot;%sCHANNELS 6 Xposition Yposition Zposition %s %s %s\n&quot;, t.c_str(), Xrotation, Yrotation, Zrotation); // XYZ
+            break;
+        case (mgBone::_AXISORDER::XZY):
+            fprintf(fp, &quot;%sCHANNELS 6 Xposition Yposition Zposition %s %s %s\n&quot;, t.c_str(), Xrotation, Zrotation, Yrotation); // XZY
+            break;
+        case (mgBone::_AXISORDER::YXZ):
+            fprintf(fp, &quot;%sCHANNELS 6 Xposition Yposition Zposition %s %s %s\n&quot;, t.c_str(), Yrotation, Xrotation, Zrotation); //YXZ
+            break;
+        case (mgBone::_AXISORDER::YZX):
+            fprintf(fp, &quot;%sCHANNELS 6 Xposition Yposition Zposition %s %s %s\n&quot;, t.c_str(), Yrotation, Zrotation, Xrotation); //YZX
+            break;
+        case (mgBone::_AXISORDER::ZXY):
+            fprintf(fp, &quot;%sCHANNELS 6 Xposition Yposition Zposition %s %s %s\n&quot;, t.c_str(), Zrotation, Xrotation, Yrotation); //ZXY
+            break;
+        case (mgBone::_AXISORDER::ZYX):
+            fprintf(fp, &quot;%sCHANNELS 6 Xposition Yposition Zposition %s %s %s\n&quot;, t.c_str(), Zrotation, Yrotation, Xrotation); //ZYX
+            break;
+        }
+
+        //for loop 
+        for (int j = 0; j &lt; rootLink-&gt;numChildren(); j++) {
+            gLink* child = rootLink-&gt;child(j);
+            savejoint(fp, child, 1, axisorder, scale);
+        }
+        fprintf(fp, &quot;}\n&quot;);
+
+        fprintf(fp, &quot;MOTION\n&quot;);
+        fprintf(fp, &quot;Frames: %d\n&quot;, Quat_Motion.n_cols);
+        fprintf(fp, &quot;Frame Time: %g\n&quot;, frametime);
+
+        for (int i = 0; i &lt; Quat_Motion.n_cols; i++) {
+            arma::vec Quat_Pose = Quat_Motion.col(i);
+            for (int j = 0; j &lt; character-&gt;numLinks(); j++) {
+                if (j == 0) {
+                    gVec3 pos;
+                    pos.setX(Quat_Pose[4]);
+                    pos.setY(Quat_Pose[5]);
+                    pos.setZ(Quat_Pose[6]);
+                    //
+                    pos = pos * scale;
+                    //
+                    gQuat q;
+                    q.setX(Quat_Pose[0]);
+                    q.setY(Quat_Pose[1]);
+                    q.setZ(Quat_Pose[2]);
+                    q.setW(Quat_Pose[3]);
+                    q.normalize();
+                    //quaternion to euler with rotation order
+                    /*enum _AXISORDER {
+                    XYZ,
+                    XZY,
+                    YXZ,
+                    YZX,
+                    ZXY,
+                    ZYX,
+                    XY, XZ,
+                    YX, YZ,
+                    ZX, ZY,
+                    X, Y, Z
+                    };*/
+                    double* euler = new double[3];
+                    switch (axisorder) {
+                    case mgBone::_AXISORDER::XYZ:
+                        quaternion2Euler(q, euler, xyz);
+                        fprintf(fp, &quot;%g %g %g %g %g %g &quot;, pos.x(), pos.y(), pos.z(), euler[0] * gRTD, euler[1] * gRTD, euler[2] * gRTD); // XYZ
+                        break;
+                    case mgBone::_AXISORDER::XZY:
+                        quaternion2Euler(q, euler, xzy);
+                        fprintf(fp, &quot;%g %g %g %g %g %g &quot;, pos.x(), pos.y(), pos.z(), euler[0] * gRTD, euler[2] * gRTD, euler[1] * gRTD); // XZY
+                        break;
+                    case mgBone::_AXISORDER::YXZ:
+                        quaternion2Euler(q, euler, yxz);
+                        fprintf(fp, &quot;%g %g %g %g %g %g &quot;, pos.x(), pos.y(), pos.z(), euler[1] * gRTD, euler[0] * gRTD, euler[2] * gRTD); //YXZ
+                        break;
+                    case mgBone::_AXISORDER::YZX:
+                        quaternion2Euler(q, euler, yzx);
+                        fprintf(fp, &quot;%g %g %g %g %g %g &quot;, pos.x(), pos.y(), pos.z(), euler[1] * gRTD, euler[2] * gRTD, euler[0] * gRTD); //YZX
+                        break;
+                    case mgBone::_AXISORDER::ZXY:
+                        quaternion2Euler(q, euler, zxy);
+                        fprintf(fp, &quot;%g %g %g %g %g %g &quot;, pos.x(), pos.y(), pos.z(), euler[2] * gRTD, euler[0] * gRTD, euler[1] * gRTD); //ZXY
+                        break;
+                    case mgBone::_AXISORDER::ZYX:
+                        quaternion2Euler(q, euler, zyx);
+                        fprintf(fp, &quot;%g %g %g %g %g %g &quot;, pos.x(), pos.y(), pos.z(), euler[2] * gRTD, euler[1] * gRTD, euler[0] * gRTD); //ZYX
+                        break;
+                    }
+
+                }
+                else {
+                    gQuat q;
+                    q.setX(Quat_Pose[(4 * j + 3) + 0]);
+                    q.setY(Quat_Pose[(4 * j + 3) + 1]);
+                    q.setZ(Quat_Pose[(4 * j + 3) + 2]);
+                    q.setW(Quat_Pose[(4 * j + 3) + 3]);
+                    q.normalize();
+                    //quaternion to euler with rotation order
+                    /*enum _AXISORDER {
+                    XYZ,
+                    XZY,
+                    YXZ,
+                    YZX,
+                    ZXY,
+                    ZYX,
+                    XY, XZ,
+                    YX, YZ,
+                    ZX, ZY,
+                    X, Y, Z
+                    };*/
+                    double* euler = new double[3];
+                    switch (axisorder) {
+                    case mgBone::_AXISORDER::XYZ:
+                        quaternion2Euler(q, euler, xyz);
+                        fprintf(fp, &quot;%g %g %g &quot;, euler[0] * gRTD, euler[1] * gRTD, euler[2] * gRTD); // XYZ
+                        break;
+                    case mgBone::_AXISORDER::XZY:
+                        quaternion2Euler(q, euler, xzy);
+                        fprintf(fp, &quot;%g %g %g &quot;, euler[0] * gRTD, euler[2] * gRTD, euler[1] * gRTD); // XZY
+                        break;
+                    case mgBone::_AXISORDER::YXZ:
+                        quaternion2Euler(q, euler, yxz);
+                        fprintf(fp, &quot;%g %g %g &quot;, euler[1] * gRTD, euler[0] * gRTD, euler[2] * gRTD); //YXZ
+                        break;
+                    case mgBone::_AXISORDER::YZX:
+                        quaternion2Euler(q, euler, yzx);
+                        fprintf(fp, &quot;%g %g %g &quot;, euler[1] * gRTD, euler[2] * gRTD, euler[0] * gRTD); //YZX
+                        break;
+                    case mgBone::_AXISORDER::ZXY:
+                        quaternion2Euler(q, euler, zxy);
+                        fprintf(fp, &quot;%g %g %g &quot;, euler[2] * gRTD, euler[0] * gRTD, euler[1] * gRTD); //ZXY
+                        break;
+                    case mgBone::_AXISORDER::ZYX:
+                        quaternion2Euler(q, euler, zyx);
+                        fprintf(fp, &quot;%g %g %g &quot;, euler[2] * gRTD, euler[1] * gRTD, euler[0] * gRTD); //ZYX
+                        break;
+                    }
+                }
+            }
+            fprintf(fp, &quot;\n&quot;);
+        }
+
+        //end file
+        fclose(fp);
+
+        return 0;
+    }
+    void saveBVH_start2end(arma::mat motion, bCharacter* character, int key_start, int key_end, char* filename) {
+
+        int totalframes = key_end - key_start;
+        arma::mat tarQuaternions(character-&gt;sizeSafeCoordArray(), totalframes, arma::fill::zeros);
+        for (int k = key_start, p = 0; k &lt; key_end; k++, p++) {
+            character-&gt;setFromCompactCoordArray(motion.col(k));
+            character-&gt;updateKinematicsUptoPos();
+            character-&gt;updateKinematicBodiesOfCharacterSim();
+
+            //
+            if (tarQuaternions.n_rows != (character-&gt;numLinks() * 4 + 3))
+                std::cout &lt;&lt; &quot; dof is not matched! see the matrix and character&quot; &lt;&lt; std::endl;
+
+            //tar pose save
+            arma::vec Quat_pose; Quat_pose.resize(character-&gt;numLinks() * 4 + 3);
+            character-&gt;getSafeCoordArray(Quat_pose);
+            tarQuaternions(0, p, arma::SizeMat(Quat_pose.n_elem, 1)) = Quat_pose;
+        }
+        saveBVHFile(character, filename, tarQuaternions, mgBone::_AXISORDER::ZYX);
+    }
+};
+
+
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      
+    
+  </body>
+</html>

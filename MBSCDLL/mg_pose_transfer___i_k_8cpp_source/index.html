@@ -1,0 +1,1084 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+    
+    
+      
+        <title>File mgPoseTransfer_IK.cpp - LAMPy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#file-mgposetransfer_ikcpp" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="LAMPy" class="md-header__button md-logo" aria-label="LAMPy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LAMPy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              File mgPoseTransfer_IK.cpp
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="LAMPy" class="md-nav__button md-logo" aria-label="LAMPy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    LAMPy
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MBS Python Manager
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            MBS Python Manager
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MBS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MBS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MBS_IK/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MBS_IK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MBS_retargeting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MBS_Retargeting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MBSCDLL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            MBSCDLL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../links/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Links
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Classes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Classes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../annotated/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hierarchy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Hierarchy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_members/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Members
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_member_functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Member Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_member_variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Member Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_member_typedefs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Member Typedefs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_member_enums/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Member Enumerations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="file-mgposetransfer_ikcpp">File mgPoseTransfer_IK.cpp</h1>
+<p><a href="../files/"><strong>File List</strong></a> <strong>&gt;</strong> <a href="../dir_ddc84d54b9d1cd5babbd6fb469a13a43/"><strong>MBS_CDLL</strong></a> <strong>&gt;</strong> <a href="../mg_pose_transfer___i_k_8cpp/"><strong>mgPoseTransfer_IK.cpp</strong></a></p>
+<p><a href="../mg_pose_transfer___i_k_8cpp/">Go to the documentation of this file</a></p>
+<pre><code class="language-C++">
+//#####################################################################
+// Copyright 2010-2015, Sung-Hee Lee.
+// This file is part of MotionWorks whose distribution is governed by the license contained in the accompanying file MotionWorks_COPYRIGHT.txt.
+//#####################################################################
+
+#include &quot;mgPoseTransfer_IK.h&quot;
+
+//double *p,         /* I/O: initial parameter estimates. On output contains the estimated solution */
+//double *x,         /* I: measurement vector. NULL implies a zero vector */
+//int m,             /* I: parameter vector dimension (i.e. #unknowns) */
+//int n,             /* I: measurement vector dimension */
+void objFuncLevMar(double *p, double *hx, int m, int n, void *adata)
+{       
+    mgPoseIKSolver* pt = (mgPoseIKSolver*)adata;
+
+    assert( n == (pt-&gt;positions.size()*3+pt-&gt;directions.size()*3+pt-&gt;tar-&gt;dof()-6) +pt-&gt;desiredPoints.size() * 3);
+
+    //p: coordinate vector
+    arma::vec lca(p,m,false);
+    pt-&gt;tar-&gt;storeCoord();
+    pt-&gt;tar-&gt;setFromCompactCoordArray(lca); //apply p to tar
+    pt-&gt;tar-&gt;updateKinematicsUptoPos();
+    for(int i=0;i&lt;pt-&gt;tarPoints.size();++i){
+        pt-&gt;tarPoints[i].updateKinematicsUptoPos();
+    }   
+
+    int cnt = 0;
+    for(int i=0;i&lt;pt-&gt;directions.size();++i)
+    {
+        int idx0 = pt-&gt;directions[i].idx0;
+        int idx1 = pt-&gt;directions[i].idx1;
+        gVec3 dirSrc = pt-&gt;srcPoints[idx1].posWorld()-pt-&gt;srcPoints[idx0].posWorld();
+        gVec3 dirTar = pt-&gt;tarPoints[idx1].posWorld()-pt-&gt;tarPoints[idx0].posWorld();
+        dirSrc.normalize();
+        dirTar.normalize();
+        gVec3 del = dirSrc-dirTar;
+        hx[cnt++] = del.x()*pt-&gt;directions[i].weight;
+        hx[cnt++] = del.y()*pt-&gt;directions[i].weight;
+        hx[cnt++] = del.z()*pt-&gt;directions[i].weight;
+    }
+    for (int i = 0; i &lt; pt-&gt;desiredPoints.size(); ++i)
+    {
+        int idx0 = pt-&gt;desiredPoints[i].idx;
+        gVec3 posDes = pt-&gt;desiredPoints[i].pos_desired;
+        gVec3 posTar = pt-&gt;tarPoints[idx0].posWorld();
+        gVec3 del = posDes - posTar;
+        hx[cnt++] = del.x() * pt-&gt;desiredPoints[i].weight;
+        hx[cnt++] = del.y() * pt-&gt;desiredPoints[i].weight;
+        hx[cnt++] = del.z() * pt-&gt;desiredPoints[i].weight;
+
+    }
+    for(int i=0;i&lt;pt-&gt;positions.size();++i)
+    {
+        int idx0 = pt-&gt;positions[i].idx;
+        gVec3 posSrc = pt-&gt;srcPoints[idx0].posWorld();
+        gVec3 posTar = pt-&gt;tarPoints[idx0].posWorld();
+        gVec3 del = posSrc-posTar;
+        hx[cnt++] = del.x()*pt-&gt;positions[i].weight;
+        hx[cnt++] = del.y()*pt-&gt;positions[i].weight;
+        hx[cnt++] = del.z()*pt-&gt;positions[i].weight;
+    }
+
+    for(int i=6;i&lt;pt-&gt;tar-&gt;dof();++i)
+    {
+        hx[cnt++] = (lca[i]-pt-&gt;preferredTarCoords[i])*pt-&gt;preferredTarCoordsWeight;
+    }
+
+    pt-&gt;tar-&gt;restoreCoord();
+    pt-&gt;tar-&gt;updateKinematicsUptoPos();
+
+    return;
+}
+void objFuncLevMarEEPos(double* p, double* hx, int m, int n, void* adata)
+{
+    mgPoseIKSolver* pt = (mgPoseIKSolver*)adata;
+
+    assert(n == (pt-&gt;tar-&gt;dof() - 6 + pt-&gt;desiredPoints.size() * 3 + pt-&gt;desiredDirs.size() * 3));
+
+    //p: coordinate vector
+    arma::vec lca(p, m, false);
+    pt-&gt;tar-&gt;storeCoord();
+    pt-&gt;tar-&gt;setFromCompactCoordArray(lca); //apply p to tar
+    pt-&gt;tar-&gt;updateKinematicsUptoPos();
+    for (int i = 0; i &lt; pt-&gt;tarPoints.size(); ++i) {
+        pt-&gt;tarPoints[i].updateKinematicsUptoPos();
+        if (i &gt; 0)
+            pt-&gt;tarParentPoints[i].updateKinematicsUptoPos();
+    }
+
+    int cnt = 0;
+    for (int i = 0; i &lt; pt-&gt;desiredPoints.size(); ++i)
+    {
+        int idx0 = pt-&gt;desiredPoints[i].idx;
+        gVec3 posDes = pt-&gt;desiredPoints[i].pos_desired;
+        gVec3 posTar = pt-&gt;tarPoints[idx0].posWorld();
+        gVec3 del = posDes - posTar;
+        hx[cnt++] = del.x() * pt-&gt;desiredPoints[i].weight;
+        hx[cnt++] = del.y() * pt-&gt;desiredPoints[i].weight;
+        hx[cnt++] = del.z() * pt-&gt;desiredPoints[i].weight;
+
+    }
+    for (int i = 0; i &lt; pt-&gt;desiredDirs.size(); ++i)
+    {
+        int idx0 = pt-&gt;desiredDirs[i].idx;
+        gVec3 dirDes = pt-&gt;desiredDirs[i].dir_desired;
+        dirDes.normalize();
+
+        gVec3 posTarEnd = pt-&gt;tarParentPoints[idx0].posWorld();
+        gVec3 posTar = pt-&gt;tarPoints[idx0].posWorld();
+        gVec3 curVel = posTar - posTarEnd;
+        curVel.normalize();
+
+        gVec3 del = dirDes - curVel;
+        hx[cnt++] = del.x() * pt-&gt;desiredDirs[i].weight_dir;
+        hx[cnt++] = del.y() * pt-&gt;desiredDirs[i].weight_dir;
+        hx[cnt++] = del.z() * pt-&gt;desiredDirs[i].weight_dir;
+
+    }
+
+    for (int i = 6; i &lt; pt-&gt;tar-&gt;dof(); ++i)
+    {
+        hx[cnt++] = (lca[i] - pt-&gt;preferredTarCoords[i]) * pt-&gt;preferredTarCoordsWeight;
+
+    }
+
+    pt-&gt;tar-&gt;restoreCoord();
+    pt-&gt;tar-&gt;updateKinematicsUptoPos();
+
+    return;
+}
+
+int     mgPoseIKSolver::transferPoseLevMar(gXMat&amp; offset)
+{
+    if(tarPoints.size()!=srcPoints.size()) return -1;
+
+    //apply offset to srcPoints
+    src-&gt;storeCoord();
+    src-&gt;baseLink()-&gt;setLocalFrame( offset*src-&gt;baseLink()-&gt;localFrame() );
+    src-&gt;updateKinematicsUptoPos();
+    for(int i=0;i&lt;srcPoints.size();++i){
+        srcPoints[i].updateKinematicsUptoPos();
+    }   
+
+    //update tarPoints
+    for(int i=0;i&lt;tarPoints.size();++i) 
+        tarPoints[i].updateKinematicsUptoPos();
+
+    //desired direction vectors from srcCharacter
+    int sz = directions.size()*3 + positions.size()*3 + tar-&gt;dof() - 6 + desiredPoints.size()*3;    
+
+    //double *p,         /* I/O: initial parameter estimates. On output contains the estimated solution */
+    //double *x,         /* I: measurement vector. NULL implies a zero vector */
+    //int m,             /* I: parameter vector dimension (i.e. #unknowns) */
+    //int n,             /* I: measurement vector dimension */
+    //int itmax,         /* I: maximum number of iterations */
+    //
+    //double *work,      /* I: working memory, allocated internally if NULL. If !=NULL, it is assumed to point to
+    //                    * a memory chunk at least LM_DIF_WORKSZ(m, n)*sizeof(double) bytes long
+    //                    */
+    //double *covar,     /* O: Covariance matrix corresponding to LS solution; Assumed to point to a mxm matrix.
+    //                    * Set to NULL if not needed.
+    //                    */
+    //void *adata)       /* I: pointer to possibly needed additional data, passed uninterpreted to func.
+    //                    * Set to NULL if not needed
+    //                    */
+    int m = tar-&gt;dof();
+    double* p = new double[m];
+    arma::vec lca(p,m,false);
+    tar-&gt;getCompactCoordArray(lca); //initialize p as current coordinates of tar
+    dlevmar_dif( objFuncLevMar, p, NULL, m, sz, 100, LevMarOpts, LevMarInfo, NULL, NULL, this);
+
+    //printf(&quot;nIter=%d, reason=%d, e=%g to %g\n&quot;,int(LevMarInfo[5]), int(LevMarInfo[6]), LevMarInfo[0],LevMarInfo[1]);
+
+    //apply x (delta of joint coordinates)  
+    tar-&gt;setFromCompactCoordArray(lca); 
+    tar-&gt;updateKinematicsUptoPos();
+    src-&gt;restoreCoord();
+    src-&gt;updateKinematicsUptoPos();
+    for(int i=0;i&lt;srcPoints.size();++i){
+        srcPoints[i].updateKinematicsUptoPos();
+    }   
+
+    delete[] p;
+
+    return 1;
+}
+
+int mgPoseIKSolver::addDesired(const char* map_name, gVec3 desiredPoses)
+{
+    addDesiredObjective(map_name, 1.0, desiredPoses); 
+    return 0;
+}
+
+
+int mgPoseIKSolver::DesiredLevMar(gXMat&amp; offset)
+{
+    //update tarPoints
+    for (int i = 0; i &lt; tarPoints.size(); ++i) {
+        tarPoints[i].updateKinematicsUptoPos();
+        if (i &gt; 0) {
+            tarParentPoints[i].updateKinematicsUptoPos();
+        }
+    }
+    //desired direction vectors from srcCharacter
+    int sz = tar-&gt;dof() - 6 + desiredPoints.size() * 3 + desiredDirs.size() * 3;
+
+    //std::cout &lt;&lt; &quot; desired Dirs &quot; &lt;&lt; desiredDirs.size() &lt;&lt; std::endl;
+    //std::cout &lt;&lt; &quot; tar dof &quot; &lt;&lt; tar-&gt;dof() - 6 &lt;&lt; &quot; desiredpoints &quot; &lt;&lt; desiredPoints.size() * 3 &lt;&lt; &quot; desiredDirs &quot; &lt;&lt; desiredDirs.size() * 3 &lt;&lt; std::endl;
+    //double *p,         /* I/O: initial parameter estimates. On output contains the estimated solution */
+    //double *x,         /* I: measurement vector. NULL implies a zero vector */
+    //int m,             /* I: parameter vector dimension (i.e. #unknowns) */
+    //int n,             /* I: measurement vector dimension */
+    //int itmax,         /* I: maximum number of iterations */
+    //
+    //double *work,      /* I: working memory, allocated internally if NULL. If !=NULL, it is assumed to point to
+    //                    * a memory chunk at least LM_DIF_WORKSZ(m, n)*sizeof(double) bytes long
+    //                    */
+    //double *covar,     /* O: Covariance matrix corresponding to LS solution; Assumed to point to a mxm matrix.
+    //                    * Set to NULL if not needed.
+    //                    */
+    //void *adata)       /* I: pointer to possibly needed additional data, passed uninterpreted to func.
+    //                    * Set to NULL if not needed
+    //                    */
+    int m = tar-&gt;dof();
+    double* p = new double[m];
+    arma::vec lca(p, m, false);
+    tar-&gt;getCompactCoordArray(lca); //initialize p as current coordinates of tar
+    dlevmar_dif(objFuncLevMarEEPos, p, NULL, m, sz, 100, LevMarOpts, LevMarInfo, NULL, NULL, this);
+
+    //printf(&quot;nIter=%d, reason=%d, e=%g to %g\n&quot;,int(LevMarInfo[5]), int(LevMarInfo[6]), LevMarInfo[0],LevMarInfo[1]);
+
+    //apply x (delta of joint coordinates)  
+    tar-&gt;setFromCompactCoordArray(lca);
+    tar-&gt;updateKinematicsUptoPos();
+    //desiredPoints.clear();
+    //desiredDirs.clear();
+    /*src-&gt;restoreCoord();
+    src-&gt;updateKinematicsUptoPos();
+    for (int i = 0; i &lt; srcPoints.size(); ++i) {
+        srcPoints[i].updateKinematicsUptoPos();
+    }*/
+
+    delete[] p;
+
+    return 1;
+}
+
+
+bool mgPoseIKSolver::addDirectionObjective(const char* pointName0, const char* pointName1, double weight)
+{
+    int pointIndex0 = -1;
+    int pointIndex1 = -1;
+
+    for(int i=0;i&lt;namePoints.size();++i)
+    {
+        if( namePoints[i].compare(pointName0) == 0 ){ 
+            pointIndex0 = i;            
+            break;
+        }
+    }
+
+    for(int i=0;i&lt;namePoints.size();++i)
+    {
+        if( namePoints[i].compare(pointName1) == 0 ){ 
+            pointIndex1 = i;            
+            break;
+        }
+    }
+
+    if( pointIndex0==-1 ){
+        printf(&quot;error: cannot find point %s\n&quot;,pointName0);
+        return false;
+    }
+    if( pointIndex1==-1 ){
+        printf(&quot;error: cannot find point %s\n&quot;,pointName1);
+        return false;
+    }
+
+    idxDirTransfer* dir = new idxDirTransfer();
+    dir-&gt;idx0 = pointIndex0;
+    dir-&gt;idx1 = pointIndex1;
+    dir-&gt;weight = weight;
+    directions.push_back(*dir);
+
+    return true;
+}
+
+bool mgPoseIKSolver::addPositionObjective(const char* pointName, double weight)
+{
+    int pointIndex = -1;
+
+    for(int i=0;i&lt;namePoints.size();++i)
+    {
+        if( namePoints[i].compare(pointName) == 0 ) pointIndex = i;
+    }
+
+    if( pointIndex == -1 ){ 
+        printf(&quot;error: cannot find point %s\n&quot;,pointName);
+        return false;
+    }
+
+    idxPosTransfer* pos = new idxPosTransfer();
+    pos-&gt;idx = pointIndex;
+    pos-&gt;weight = weight;
+    pos-&gt;scale = NULL;
+    positions.push_back(*pos);
+
+    return true;
+}
+bool mgPoseIKSolver::addPositionObjective(const char* pointName, double weight, double scale)
+{
+    int pointIndex = -1;
+
+    for (int i = 0; i&lt;namePoints.size(); ++i)
+    {
+        if (namePoints[i].compare(pointName) == 0) pointIndex = i;
+    }
+
+    if (pointIndex == -1) {
+        printf(&quot;error: cannot find point %s\n&quot;, pointName);
+        return false;
+    }
+
+    idxPosTransfer* pos = new idxPosTransfer();
+    pos-&gt;idx = pointIndex;
+    pos-&gt;weight = weight;
+    pos-&gt;scale = scale;
+    positions.push_back(*pos);
+
+    return true;
+}
+bool mgPoseIKSolver::addDesiredObjective(const char* pointName, double weight, gVec3 desiredpos)
+{
+    int pointIndex = -1;
+
+    for (int i = 0; i&lt;namePoints.size(); ++i)
+    {
+        if (namePoints[i].compare(pointName) == 0) pointIndex = i;
+    }
+
+    if (pointIndex == -1) {
+        printf(&quot;error: cannot find point %s\n&quot;, pointName);
+        return false;
+    }
+
+    idxDesired* pos = new idxDesired();
+    pos-&gt;idx = pointIndex;
+    pos-&gt;weight = weight;
+    pos-&gt;pos_desired = desiredpos;
+    desiredPoints.push_back(*pos);
+
+    return true;
+}
+
+bool mgPoseIKSolver::addDesiredDirObjective(const char* pointName, double weight_dir, gVec3 desireddir)
+{
+    int pointIndex = -1;
+
+    for (int i = 0; i &lt; namePoints.size(); ++i)
+    {
+        if (namePoints[i].compare(pointName) == 0) pointIndex = i;
+    }
+
+    if (pointIndex == -1) {
+        printf(&quot;error: cannot find point %s\n&quot;, pointName);
+        return false;
+    }
+
+    idxDesiredDir* dir = new idxDesiredDir();
+    dir-&gt;idx = pointIndex;
+    dir-&gt;weight_dir = weight_dir;
+    dir-&gt;dir_desired = desireddir;
+    desiredDirs.push_back(*dir);
+
+    return true;
+}
+
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      
+    
+  </body>
+</html>

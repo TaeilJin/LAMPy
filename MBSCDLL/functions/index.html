@@ -1,0 +1,1046 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../class_member_enums/">
+      
+      
+        <link rel="next" href="../variables/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+    
+    
+      
+        <title>Functions - LAMPy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#functions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="LAMPy" class="md-header__button md-logo" aria-label="LAMPy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LAMPy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Functions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="LAMPy" class="md-nav__button md-logo" aria-label="LAMPy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    LAMPy
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MBS Python Manager
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            MBS Python Manager
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MBS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MBS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MBS_IK/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MBS_IK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MBS_retargeting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MBS_Retargeting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MBSCDLL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            MBSCDLL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../links/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Links
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Classes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Classes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../annotated/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hierarchy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Hierarchy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_members/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Members
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_member_functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Member Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_member_variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Member Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_member_typedefs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Member Typedefs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_member_enums/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Member Enumerations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Functions
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Functions
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      a
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      d
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#g" class="md-nav__link">
+    <span class="md-ellipsis">
+      g
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i" class="md-nav__link">
+    <span class="md-ellipsis">
+      i
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#l" class="md-nav__link">
+    <span class="md-ellipsis">
+      l
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m" class="md-nav__link">
+    <span class="md-ellipsis">
+      m
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o" class="md-nav__link">
+    <span class="md-ellipsis">
+      o
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r" class="md-nav__link">
+    <span class="md-ellipsis">
+      r
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#s" class="md-nav__link">
+    <span class="md-ellipsis">
+      s
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t" class="md-nav__link">
+    <span class="md-ellipsis">
+      t
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#u" class="md-nav__link">
+    <span class="md-ellipsis">
+      u
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      a
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      d
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#g" class="md-nav__link">
+    <span class="md-ellipsis">
+      g
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i" class="md-nav__link">
+    <span class="md-ellipsis">
+      i
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#l" class="md-nav__link">
+    <span class="md-ellipsis">
+      l
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m" class="md-nav__link">
+    <span class="md-ellipsis">
+      m
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o" class="md-nav__link">
+    <span class="md-ellipsis">
+      o
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r" class="md-nav__link">
+    <span class="md-ellipsis">
+      r
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#s" class="md-nav__link">
+    <span class="md-ellipsis">
+      s
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t" class="md-nav__link">
+    <span class="md-ellipsis">
+      t
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#u" class="md-nav__link">
+    <span class="md-ellipsis">
+      u
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="functions">Functions</h1>
+<h2 id="a">a</h2>
+<ul>
+<li><strong>ADD_DESIRED_DIR</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>ADD_DESIRED_POINTS</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+</ul>
+<h2 id="d">d</h2>
+<ul>
+<li><strong>DO_POSE_IK</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>DO_RETARGET_OUTPUT</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+</ul>
+<h2 id="g">g</h2>
+<ul>
+<li><strong>GEN_MBS_TXTFILE</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>GET_DIRECTIONS</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+</ul>
+<h2 id="i">i</h2>
+<ul>
+<li><strong>INIT_DATA</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>INIT_IK</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>INIT_JOINT_LIST</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>INIT_MAPPING_fromTXT</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>INIT_RETARGET</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+</ul>
+<h2 id="l">l</h2>
+<ul>
+<li><strong>LOAD_MBS</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>LOAD_SRC_MOTION</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>LOAD_SRC_TAR_MBS</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+</ul>
+<h2 id="m">m</h2>
+<ul>
+<li><strong>MAPPING_DIRS</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>MAPPING_JOINTS</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>MAPPING_JOINTS_withAXIS</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>MAPPING_POS</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>MEASURE_DIRECTION</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>MEASURE_POSITION</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>MW_GRAVITY_VECTOR</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>MW_GROUND_NORMAL</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+</ul>
+<h2 id="o">o</h2>
+<ul>
+<li><strong>OUTPUT_JOINT_POSE_UNITY</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>OUTPUT_JOINT_QUATERNION_UNITY</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>objFuncLevMar</strong> (<a href="../mg_pose_transfer___i_k_8cpp/"><strong>mgPoseTransfer_IK.cpp</strong></a>)</li>
+<li><strong>objFuncLevMarEEPos</strong> (<a href="../mg_pose_transfer___i_k_8cpp/"><strong>mgPoseTransfer_IK.cpp</strong></a>)</li>
+</ul>
+<h2 id="r">r</h2>
+<ul>
+<li><strong>READ_DIRECTION_SIZE</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>READ_FrameTime</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>READ_JOINTNAME</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>READ_MBS_JOINT_LOCAL_QUAT</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>READ_MBS_JOINT_POSITION</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>READ_MBS_JOINT_WORLD_QUAT</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>READ_MBS_POSE</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>READ_SRC_POINTS</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>READ_TAR_POINTS</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>READ_TOTALFRAMES</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+</ul>
+<h2 id="s">s</h2>
+<ul>
+<li><strong>SAVE_BVH</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>SETTING_DESDIRJOINTS</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>SETUP_DES_DIR_JOINTS</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>SET_DESIRED_BASE</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>SET_DESIRED_DIRS</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>SET_DESIRED_POINTS</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>SET_MBS_FromEXP</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>SET_MBS_JOINT_FromEXP</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>SET_MBS_JOINT_FromQuat</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>SRC_RESTORECOORD</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>SRC_STORECOORD</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>SetJntRotDirOBJ</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+</ul>
+<h2 id="t">t</h2>
+<ul>
+<li><strong>TranseRotUnitytoMW</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+</ul>
+<h2 id="u">u</h2>
+<ul>
+<li><strong>UPDATE_BASE_POSITION_UnitytoMW</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>UPDATE_JOINTVEC</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>UPDATE_JOINT_QUATERNION_UnitytoMW</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>UPDATE_JOINT_QUATERNION_UnitytoMW_usingName</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>UPDATE_MBS</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>UPDATE_POSE_UnitytoMW</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>UPDATE_POSE_fromData</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>UPDATE_SRC_POINTS</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+<li><strong>UPDATE_TAR_POINTS</strong> (<a href="../_m_b_s___c_d_l_l_8cpp/"><strong>MBS_CDLL.cpp</strong></a>)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      
+    
+  </body>
+</html>

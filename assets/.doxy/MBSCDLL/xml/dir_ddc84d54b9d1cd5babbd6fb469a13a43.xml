@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="dir_ddc84d54b9d1cd5babbd6fb469a13a43" kind="dir">
+    <compoundname>MBS_CDLL</compoundname>
+    <innerfile refid="_m_b_s___c_d_l_l_8cpp">MBS_CDLL.cpp</innerfile>
+    <innerfile refid="mg_pose_transfer___i_k_8cpp">mgPoseTransfer_IK.cpp</innerfile>
+    <innerfile refid="mg_pose_transfer___i_k_8h">mgPoseTransfer_IK.h</innerfile>
+    <innerfile refid="save_b_v_h_8cpp">saveBVH.cpp</innerfile>
+    <innerfile refid="save_b_v_h_8h">saveBVH.h</innerfile>
+    <innerfile refid="save_t_x_t_8h">saveTXT.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MBS_CDLL/"/>
+  </compounddef>
+</doxygen>

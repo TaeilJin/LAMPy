@@ -6,10 +6,31 @@ nav:
     - MBS: MBS.md
     - MBS_IK: MBS_IK.md
     - MBS_Retargeting: MBS_retargeting.md
+  - MBSCDLL:
+          - "Links": "MBSCDLL/links.md"
+          - "Classes":
+              - "Class List": "MBSCDLL/annotated.md"
+              - "Class Index": "MBSCDLL/classes.md"
+              - "Class Hierarchy": "MBSCDLL/hierarchy.md"
+              - "Class Members": "MBSCDLL/class_members.md"
+              - "Class Member Functions": "MBSCDLL/class_member_functions.md"
+              - "Class Member Variables": "MBSCDLL/class_member_variables.md"
+              - "Class Member Typedefs": "MBSCDLL/class_member_typedefs.md"
+              - "Class Member Enumerations": "MBSCDLL/class_member_enums.md"
+          - "Functions": "MBSCDLL/functions.md"
+          - "Variables": "MBSCDLL/variables.md"
+          - "Files": "MBSCDLL/files.md"
 theme:
   name: material
 
 plugins:
   - mkdocstrings
-  
-  
+  - mkdoxy:
+      projects:
+        MBSCDLL: # name of project must be alphanumeric + numbers (without spaces)
+          src-dirs: MBS_CDLL # path to source code (support multiple paths separated by space) => INPUT
+          full-doc: True # if you want to generate full documentation
+          doxy-cfg: # standard doxygen configuration (key: value)
+            FILE_PATTERNS: "*.cpp *.h*" # specify file patterns to filter out
+            RECURSIVE: True # recursive search in source directories
+

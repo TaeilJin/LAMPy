@@ -1,0 +1,13 @@
+name: LAMPY
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7.11=h6244533_0
+  - python-dateutil=2.8.2=pyhd3eb1b0_0
+  - python-libarchive-c=2.9=pyhd3eb1b0_1
+  - python-lsp-black=1.0.0=pyhd3eb1b0_0
+  - python-lsp-jsonrpc=1.0.0=pyhd3eb1b0_0
+  - python-lsp-server=1.2.4=pyhd3eb1b0_0
+  - python-slugify=5.0.2=pyhd3eb1b0_0
+  - python_abi=3.7=2_cp37m

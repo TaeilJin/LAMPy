@@ -7,8 +7,8 @@ class TCP_Connection():
     TCP Connection 
     """
     def __init__(self, server_ip, server_port):
-        server_ip = '143.248.6.198'  # 모든 네트워크 인터페이스에서 연결 수락
-        server_port = 80
+        #server_ip = '192.168.1.140'  # 모든 네트워크 인터페이스에서 연결 수락
+        #server_port = 80
 
         server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         server_socket.bind((server_ip, server_port))

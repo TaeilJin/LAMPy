@@ -55,7 +55,8 @@ class Vis():
         points.append([ax.plot([], [], [], 'o', color='green')[0] for _ in range(targets.shape[1])]) 
         points.append([ax.plot([], [], [], 'o', color='orange')[0] for _ in range(envs.shape[1])])
         
-
+        # Text object for displaying frame number
+        frame_text = ax.text2D(0.05, 0.95, "", transform=ax.transAxes)
         def animate(i):
             
             changed = []
@@ -87,11 +88,14 @@ class Vis():
                 points[2][j].set_data(envs[i,j, 0], -envs[i,j, 2])
                 points[2][j].set_3d_properties(envs[i,j, 1])
 
+            # Update frame number text
+            frame_text.set_text(f"Frame: {i}")
+
             changed += lines
             changed += points
             changed += forward_lines
             changed += up_lines
-
+            changed.append(frame_text)
             return changed
             
         plt.tight_layout()

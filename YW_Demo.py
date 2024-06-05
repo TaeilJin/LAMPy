@@ -66,10 +66,6 @@ target_forward[:,:,0] = target_forward[:,:,0]*-1
 target_up[:,:,0] = target_up[:,:,0]*-1
 target_surfacepoints[:,:,0] = target_surfacepoints[:,:,0]*-1
 
-
-
-
-
 # 3. setup the optimization layer
 class OptModel_YW(torch.nn.Module):
     def __init__(self,nFrames, mbs):
@@ -198,18 +194,31 @@ def calc_new_pos(src_point, src_samples, tar_samples):
     tar_point = new_jnt_pos
     return tar_point
 
-target_joint = torch.tensor([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])
-srcsamples = torch.tensor([
-    [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]],
-    [[1.5, 2.5, 3.5], [4.5, 5.5, 6.5], [7.5, 8.5, 9.5]]
-])
+# target_joint = torch.tensor([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])
+# srcsamples = torch.tensor([
+#     [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]],
+#     [[1.5, 2.5, 3.5], [4.5, 5.5, 6.5], [7.5, 8.5, 9.5]]
+# ])
 
-target_envs = target_envs.clone()
-target_envs[:,:,0] = target_envs[:,:,0] + 0.3
-for j in range(0,15):
-    new_joint = calc_new_pos(target_k_pose[:,j,:],surface_envs,target_envs)
+# corresponding index
+threshold = 0.3
+binary_tensor1 = (source_importance[:,:,2] >= threshold).int()
+binary_tensor2 = (target_importance[:,:,2] >= threshold).int()
+# 마지막 axis 값 비교
+mask = (binary_tensor1 == binary_tensor2)
+expanded_mask = mask.unsqueeze(-1).expand(-1, -1, 3)
 
-    target_k_pose[:,j,:] = new_joint
+masked_src_surfpoints = torch.where(expanded_mask, torch.tensor(1000.0), source_surfacepoints)
+masked_tar_surfpoints = torch.where(expanded_mask, torch.tensor(1000.0), target_surfacepoints)
+
+
+# 내가 원하는 Frame 에서만 변형을 진행한다.
+
+target_posisition = torch.zeros_like(source_posisition)
+#for j in range(0,15):
+new_joint = calc_new_pos(source_posisition[:,14,:],masked_src_surfpoints,masked_tar_surfpoints)
+
+target_posisition[:,14,:] = new_joint
 
 world_positions = np.zeros((target_k_pose.shape[0],25,3))
 res = mbs.getCompactArray()

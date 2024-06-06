@@ -194,13 +194,16 @@ def calc_new_pos(src_point, src_samples, tar_samples):
     return tar_point
 
 
-# # corresponding index
-# threshold = 0.3
-# binary_tensor1 = (source_importance[:,2,:] >= threshold).int()
-# binary_tensor2 = (target_importance[:,2,:] >= threshold).int()
-# # 마지막 axis 값 비교
-# mask = (binary_tensor1 == binary_tensor2)
-# expanded_mask = mask.unsqueeze(-1).expand(-1, -1, 3)
+# corresponding index
+threshold = 0.7
+binary_tensor1 = (source_importance[:,2,:] >= threshold).int()
+binary_tensor2 = (target_importance[:,2,:] >= threshold).int()
+# 마지막 axis 값 비교
+mask = (binary_tensor1 == binary_tensor2)
+expanded_mask = mask.any(dim=1)
+
+target_posisition[expanded_mask,14,:] = calc_new_pos(source_posisition[expanded_mask,14,:],source_surfacepoints[expanded_mask],target_surfacepoints[expanded_mask])
+target_posisition[expanded_mask,13,:] = calc_new_pos(source_posisition[expanded_mask,13,:],source_surfacepoints[expanded_mask],target_surfacepoints[expanded_mask])
 
 # masked_src_surfpoints = torch.where(expanded_mask, torch.tensor(1000.0), source_surfacepoints)
 # masked_tar_surfpoints = torch.where(expanded_mask, torch.tensor(1000.0), target_surfacepoints)
@@ -239,7 +242,7 @@ for s_f in range(0,world_positions.shape[0]):
     mbs.getMotionMatrix()
     world_positions[s_f:s_f+1] = mbs._motion_mat[:,:,:,3].permute(1,0,2).numpy()
 
-np.save('env_ret.npz', array1=world_positions)
+np.save('env_ret.npz', world_positions)
 world_positions = np.load("env_ret.npz")['arr_0']
 # 6. visualize
 vis = Vis()
@@ -250,7 +253,7 @@ np_targets = target_posisition.numpy()
 np_targetforwards = target_forward.numpy()
 np_targetup = target_up.numpy()
 # np_imp의 값이 0.5 이하인 인덱스 찾기
-np_importance = target_importance[:,0,:].numpy()
+np_importance = target_importance[:,2,:].numpy()
 np_envs = target_surfacepoints.numpy()
 
 indices = np.where(np_importance <= 0.5)

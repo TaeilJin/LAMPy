@@ -37,19 +37,19 @@ default_mat = mbs.getCompactArray()
 # 2. initial value 
 # 환경 데이터 불러오기
 # source data
-env_source_info: torch.Tensor = read_env_info_from_file("Data/hc_hd_for_TJ/Source_Extraction/lc_ld_nb_r_6.txt")
+env_source_info: torch.Tensor = read_env_info_from_file("Data/hc_hd_for_TJ/Source_Extraction/lc_ld_nb_s_w.txt")
 source_pose: torch.Tensor = env_source_info[10:,:15*9].reshape(-1,15,9)
 source_posisition: torch.Tensor = source_pose[:,:,:3]
 source_forward: torch.Tensor = source_pose[:,:,3:6]
 source_up: torch.Tensor = source_pose[:,:,6:9]
 source_surfacepoints : torch.Tensor = env_source_info[10:,168:168+540*3].reshape(-1,540,3)
-source_importance: torch.Tensor = env_source_info[10:,3948:].reshape(-1,540,6)
+source_importance: torch.Tensor = env_source_info[10:,3948:].reshape(-1,6,540)
 
 # target data
-target_importance: torch.Tensor = read_env_info_from_file("Data/hc_hd_for_TJ/Target_cont_Inference/Importance/lc_ld_nb_r_6.txt").reshape(-1,540,6)
-target_surfacepoints: torch.Tensor = read_env_info_from_file("Data/hc_hd_for_TJ/Target_cont_Inference/env_Pos/lc_ld_nb_r_6.txt").reshape(-1,540,3)
+target_importance: torch.Tensor = read_env_info_from_file("Data/hc_hd_for_TJ/Target_cont_Inference/Importance/lc_ld_nb_s_w.txt").reshape(-1,6,540)
+target_surfacepoints: torch.Tensor = read_env_info_from_file("Data/hc_hd_for_TJ/Target_cont_Inference/env_Pos/lc_ld_nb_s_w.txt").reshape(-1,540,3)
 
-target_pose: torch.Tensor = read_env_info_from_file("Data/hc_hd_for_TJ/Target_cont_Inference/Generated_Motion/lc_ld_nb_r_6.txt")
+target_pose: torch.Tensor = read_env_info_from_file("Data/hc_hd_for_TJ/Target_cont_Inference/Generated_Motion/lc_ld_nb_s_w.txt")
 target_pose: torch.Tensor = target_pose.reshape(-1,15,9)
 target_posisition: torch.Tensor = target_pose[:,:,:3]
 target_forward: torch.Tensor = target_pose[:,:,3:6]
@@ -75,7 +75,6 @@ class OptModel_YW(torch.nn.Module):
         optim_vars = [th.Vector(tensor=(torch.zeros((nFrames, mbs._dof),dtype=torch.float32)), name="theta_opt")]
         # 2. auxiliary variables
         aux_vars = [
-            th.Variable(torch.zeros((nFrames,mbs._num_joints, 3)), name="targeted_wposition"), 
             th.Variable(torch.zeros((nFrames,15, 3)), name="targeted_kposition"), 
             th.Variable(torch.zeros((nFrames,mbs._num_joints * 3 + 3)),name="q"),
             th.Variable(torch.zeros((nFrames,15, 3)), name="targeted_kup"), 
@@ -95,7 +94,7 @@ class OptModel_YW(torch.nn.Module):
     def _error_fn(self,optim_vars, aux_vars):
         
         (theta,) = optim_vars
-        (tar_pose, tar_keypose, residual, tar_keyup, tar_keyfor) = aux_vars
+        (tar_keypose, residual, tar_keyup, tar_keyfor) = aux_vars
         
         # mbs update
         mbs.setFromCompactArray(theta.tensor)
@@ -194,44 +193,38 @@ def calc_new_pos(src_point, src_samples, tar_samples):
     tar_point = new_jnt_pos
     return tar_point
 
-# target_joint = torch.tensor([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])
-# srcsamples = torch.tensor([
-#     [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]],
-#     [[1.5, 2.5, 3.5], [4.5, 5.5, 6.5], [7.5, 8.5, 9.5]]
-# ])
 
-# corresponding index
-threshold = 0.3
-binary_tensor1 = (source_importance[:,:,2] >= threshold).int()
-binary_tensor2 = (target_importance[:,:,2] >= threshold).int()
-# 마지막 axis 값 비교
-mask = (binary_tensor1 == binary_tensor2)
-expanded_mask = mask.unsqueeze(-1).expand(-1, -1, 3)
+# # corresponding index
+# threshold = 0.3
+# binary_tensor1 = (source_importance[:,2,:] >= threshold).int()
+# binary_tensor2 = (target_importance[:,2,:] >= threshold).int()
+# # 마지막 axis 값 비교
+# mask = (binary_tensor1 == binary_tensor2)
+# expanded_mask = mask.unsqueeze(-1).expand(-1, -1, 3)
 
-masked_src_surfpoints = torch.where(expanded_mask, torch.tensor(1000.0), source_surfacepoints)
-masked_tar_surfpoints = torch.where(expanded_mask, torch.tensor(1000.0), target_surfacepoints)
+# masked_src_surfpoints = torch.where(expanded_mask, torch.tensor(1000.0), source_surfacepoints)
+# masked_tar_surfpoints = torch.where(expanded_mask, torch.tensor(1000.0), target_surfacepoints)
 
 
 # 내가 원하는 Frame 에서만 변형을 진행한다.
 
-target_posisition = torch.zeros_like(source_posisition)
+#target_posisition = torch.zeros_like(source_posisition)
 #for j in range(0,15):
-new_joint = calc_new_pos(source_posisition[:,14,:],masked_src_surfpoints,masked_tar_surfpoints)
+#new_joint = calc_new_pos(source_posisition[:,14,:],masked_src_surfpoints,masked_tar_surfpoints)
 
-target_posisition[:,14,:] = new_joint
+#target_posisition[:,14,:] = new_joint
 
-world_positions = np.zeros((target_k_pose.shape[0],25,3))
+world_positions = np.zeros((target_posisition.shape[0],25,3))
 res = mbs.getCompactArray()
 for s_f in range(0,world_positions.shape[0]):
     
     
-    res[s_f:s_f+1,:3] = target_k_pose[s_f:s_f+1,0,:]
+    res[s_f:s_f+1,:3] = target_posisition[s_f:s_f+1,0,:]
     inputs = {"theta_opt": res, 
-                "targeted_wposition" : target_w_pose[s_f:s_f+1], 
-                "targeted_kposition" :target_k_pose[s_f:s_f+1],
+                "targeted_kposition" :target_posisition[s_f:s_f+1],
                 "q" :(res),
-                "targeted_kup" : target_k_up[s_f:s_f+1],
-                "targeted_kfor" : target_k_forward[s_f:s_f+1]
+                "targeted_kup" : target_up[s_f:s_f+1],
+                "targeted_kfor" : target_forward[s_f:s_f+1]
                 }
     output = optim_layer(inputs)
 
@@ -241,22 +234,25 @@ for s_f in range(0,world_positions.shape[0]):
     # 5. output 
     mbs.setFromCompactArray(output)
     mbs.updateKinematicsUptoPos()
-    print("Outer loss: ", (mbs._joints[0]._wmat[:,:,3] - target_w_pose[s_f:s_f+1,0,:]).mean())
+    print("Outer loss: ", (mbs._joints[0]._wmat[:,:,3] - target_posisition[s_f:s_f+1,0,:]).mean())
 
     mbs.getMotionMatrix()
     world_positions[s_f:s_f+1] = mbs._motion_mat[:,:,:,3].permute(1,0,2).numpy()
 
-
+np.save('env_ret.npz', array1=world_positions)
+world_positions = np.load("env_ret.npz")['arr_0']
 # 6. visualize
 vis = Vis()
 
 
 # 6.1 visualizing the conditions 
-np_targets = target_k_pose.numpy()
-np_targetforwards = target_k_forward.numpy()
-np_targetup = target_k_up.numpy()
-np_envs = surface_envs.numpy()
+np_targets = target_posisition.numpy()
+np_targetforwards = target_forward.numpy()
+np_targetup = target_up.numpy()
 # np_imp의 값이 0.5 이하인 인덱스 찾기
+np_importance = target_importance[:,0,:].numpy()
+np_envs = target_surfacepoints.numpy()
+
 indices = np.where(np_importance <= 0.5)
 
 # 인덱스를 사용하여 np_envs 배열의 값을 변경
@@ -265,5 +261,5 @@ for i, j in zip(indices[0], indices[1]):
 
 vis.plot_animation_env_pose(world_positions,np_targets,np_envs,mbs.getParents(),
                             target_for=None, target_up=None,
-                            filename="env_partial",axis_scale=1)
+                            filename="env_retargeting",axis_scale=1)
 
